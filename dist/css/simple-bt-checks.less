@@ -1,0 +1,103 @@
+/*!
+ * simpleBtChecks v1.1.0
+ * http://joelthorner.com
+ *
+ * Copyright 2015 Joel Thorner - @joelthorner
+ */
+@border-radius:     4px;
+@font-size-base :   12px;
+@size-base:         16px;
+@padding-base:      1px;
+// colors
+@color-icon:        #555;
+@color-border:      #ccc;
+@background-check:  #fff;
+
+/* recomended for all inputs to transform (visual javascript bad effects onload script) 
+
+    input[type='checkbox']{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0px, 0px, 0px, 0px);
+        border: 0px none;
+    }
+    
+    option: disable or change selector 'input[type='checkbox']' ^ ^ ^
+*/
+
+input[type='checkbox']{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0px, 0px, 0px, 0px);
+    border: 0px none;
+}
+
+.sbtc{
+    &-btn{
+        outline: none !important; //optional:
+
+        cursor: pointer;
+        line-height: 1.42857143;
+        text-align: center;
+        margin: 0px 0px 2px 0px;
+        padding: 0px;
+        
+        -webkit-transition: border-color ease-in-out .15s, background-color ease-in-out .15s;
+             -o-transition: border-color ease-in-out .15s, background-color ease-in-out .15s;
+                transition: border-color ease-in-out .15s, background-color ease-in-out .15s;
+  
+    }
+
+    &-icon{
+        line-height: 1;
+        display: block;
+        padding-right: 3px;
+    }
+
+    &-default{
+        width: @size-base;
+        height: @size-base;
+        font-size: @font-size-base;
+        border-radius: @border-radius;
+
+        & .sbtc-icon{
+            margin-top: -2px;
+            padding-right: @padding-base - 1;
+        } 
+    }
+
+    &-x-2{
+        width: @size-base * 2;
+        height: @size-base * 2;
+        font-size: @font-size-base * 2;
+        border-radius: @border-radius * 2;
+        
+        & .sbtc-icon{
+            margin-top: -2px;
+            padding-right: @padding-base;
+        }
+    }
+
+    &-x-3{
+        width: @size-base * 3;
+        height: @size-base * 3;
+        font-size: @font-size-base * 3;
+        border-radius: @border-radius * 3;
+
+        & .sbtc-icon{
+            margin-top: -1px;
+            padding-right: @padding-base + 2;
+        }
+    }
+    
+}
+
+

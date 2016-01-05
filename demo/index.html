@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Joel Bootstrap Gallery">
+	<meta name="author" content="Joel Thorner">
+
+	<title>Simple-bt-checks - JoelThorner</title>
+	<link rel="icon" type="image/png" href="img/icon.png">
+
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Library CSS -->
+	<link rel="stylesheet" href="css/simple-bt-checks.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+		/* demo css */
+		.js { color: #C30; }
+		.key{ color: #4f9fcf; }
+		.bol{ color: #069; }
+		.com{ opacity: 0.5; }
+		.pre-default{background:none;border:none;padding:0px;}
+		#colors-1 label{font-size:12px;}
+		#colors-1 .checkbox{margin-top: 0px;}
+	</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse" style="border-radius:0px">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <a class="navbar-brand" href="http://joelthorner.com" target="_blank">Joel Thorner</a>
+    </div>
+    <ul class="nav navbar-nav">
+		<li><a href="#states">States</a></li>
+		<li><a href="#sizes">Sizes</a></li>
+		<li><a href="#colors">Colors</a></li>
+		<li><a href="#events">Events</a></li>
+	</ul>
+  </div><!-- /.container-fluid -->
+</nav>
+	
+	<div class="container">
+		
+		<div class="row">
+
+			<div class="col-md-7">
+				<!-- states -->
+				<h1 class="page-header" id="states">
+					States
+					<small>Demo check's states</small>
+				</h1>
+				<p id="states-1">
+					<span class="checkbox">
+						<label> <input type="checkbox"> Check default </label>
+					</span>
+					<span class="checkbox">
+						<label> <input type="checkbox" value="x"> Check with value </label>
+					</span>
+					<span class="checkbox">
+						<label> <input type="checkbox" value="x" class="checked-by-js"> <small> Checked by jQuery (.prop('checked', true))</small> </label>
+					</span>
+					<span class="checkbox">
+						<label> <input type="checkbox" value="x" checked=""> Checked by atribute HTML </label>
+					</span>
+				</p>
+				<hr>
+
+				<h2><small>Code example</small></h2>
+<pre>
+$(<span class="js">'.checked-by-js'</span>).prop(<span class="js">'checked'</span>, <span class="bol">true</span>); <span class="com">//check input with jQuery</span>
+$(<span class="js">'#states-1 input[type="checkbox"]'</span>).simpleBtChecks();
+</pre>
+				<hr>
+
+				<!-- sizes -->
+				<h1 class="page-header" id="sizes">
+					Sizes
+					<small>'size' plugin setting</small>
+				</h1>
+
+				<p id="sizes-1">
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox"></label>
+					</span>
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+				</p>
+				<p id="sizes-2">
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox"></label>
+					</span>
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+				</p>
+				<p id="sizes-3">
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox"></label>
+					</span>
+					<span class="checkbox" style="display: inline">
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+				</p>
+				<h2><small>Code example</small></h2>
+				<hr>
+<pre>
+$(<span class="js">'#sizes-1 input[type="checkbox"]'</span>).simpleBtChecks();<span class="com">//default size is 'default'</span>
+$(<span class="js">'#sizes-2 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-2"</span> });
+$(<span class="js">'#sizes-3 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-3"</span> });
+</pre>
+				<hr>
+
+
+				<!-- colors -->
+				<h1 class="page-header" id="colors">
+					Colors
+					<small>'class' plugin setting</small>
+				</h1>
+
+				<p>You can pass any class, but we recommend at least 'btn' bootstrap class. Default classes: 'btn btn-default'</p>
+				<hr>
+
+				<div id="colors-1" class="col-xs-12">
+					<span class="checkbox color_1 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_2 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_3 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_4 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_5 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_6 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+
+					<span class="checkbox color_7 col-xs-4 col-sm-3">
+						<label> <input type="checkbox"></label>
+						<label> <input type="checkbox" value="x" checked=""></label>
+					</span>
+				</div>
+				<h2><small>Code example</small></h2>
+				<hr>
+<pre>
+$(<span class="js">'.color_1 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-2"</span> }); 
+<span class="com">// default bt class: 'btn btn-default'</span>
+
+$(<span class="js">'.color_2 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-primary'</span> 
+});
+$(<span class="js">'.color_3 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-success' </span>
+});
+$(<span class="js">'.color_4 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-info'</span> 
+});
+$(<span class="js">'.color_5 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-warning' </span>
+});
+$(<span class="js">'.color_6 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-danger'</span> 
+});
+$(<span class="js">'.color_7 input[type="checkbox"]'</span>).simpleBtChecks({ 
+	<span class="key">size</span>: <span class="js">'x-2'</span>,
+	<span class="key">class</span> : <span class="js">'btn btn-link'</span> 
+});
+</pre>
+			<hr>
+
+			<!-- colors -->
+			<h1 class="page-header" id="events">
+				Events
+				<small>Potato</small>
+			</h1>
+			<ul class="list-unstyled">
+				<li><small><b>onLoadSbtc</b>: For each input a node is created. After this node is placed run this event, and return newNodeElement (node) and input loop index (int)</small></li>
+				<li><small><b>beforeChange</b>: Before check change run beforeChange event, and return (bool) and nodeElement (node)</small></li>
+				<li><small><b>afterChange</b>: After check change run beforeChange event, and return (bool) and nodeElement (node)</small></li>
+			</ul>
+			<hr>
+			<div id="events-1">
+				<span class="checkbox">
+					<label> <input type="checkbox"> Click the magic input!</label>
+				</span>
+<pre>
+<small><b>onLoadSbtc 			</b><span id="out-ev" class='js'></span></small>
+<small><b>beforeChange - is checked? 	</b><span id="out-ev-1" class='bol'></span></small>
+<small><b>afterChange - is checked?	</b><span id="out-ev-2" class='bol'></span></small>
+</pre>
+
+			</div>
+			<h2><small>Code example</small></h2>
+			<hr>
+<pre>
+$(<span class="js">'#events-1 input[type="checkbox"]'</span>).simpleBtChecks({
+    <span class="key">size</span>: <span class="js">"x-2"</span>,
+    <span class="key">icon</span>: <span class="js">"glyphicon glyphicon-heart-empty"</span>,
+    <span class="key">onLoadSbtc</span> : <span class="bol">function</span>(<span class='org'>newNodeElement</span>, <span class='org'>index</span>){
+
+        console.log(<span class="js">'function onLoadSbtc - newNodeElement:'</span>);
+        console.log(<span class='org'>newNodeElement</span>);
+        $(<span class="js">'#out-ev'</span>).text( <span class="js">'Open js console :P - Input number: '</span> + <span class='org'>index</span>);
+    },
+    <span class="key">beforeChange</span> : <span class="bol">function</span> (<span class='org'>isChecked</span>, <span class='org'>nodeElement</span>){
+
+        $(<span class="js">'#out-ev-1'</span>).text(<span class='org'>isChecked</span>);
+    },
+    <span class="key">afterChange</span> : <span class="bol">function</span> (<span class='org'>isChecked</span>, <span class='org'>nodeElement</span>){
+
+        $(<span class="js">'#out-ev-2'</span>).text(<span class='org'>isChecked</span>);
+        if (<span class='org'>isChecked</span>) <span class='org'>nodeElement</span>.addClass(<span class="js">'btn-success'</span>).removeClass(<span class="js">'btn-danger'</span>);
+        else  <span class='org'>nodeElement</span>.addClass(<span class="js">'btn-danger'</span>).removeClass(<span class="js">'btn-success'</span>);
+    }
+});
+</pre>
+
+			</div>
+
+
+			<div class="col-md-5" style="margin-top:40px;">
+				<div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Options</h3>
+						</div>
+						<div class="panel-body">
+<pre class="pre-default">
+<span class="com">//default options</span>
+$(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks
+({
+	<span class="key">size</span>: <span class="js">"default"</span>,
+	<span class="key">class</span>: <span class="js">"btn btn-default"</span>,
+	<span class="key">icon</span> : <span class="js">"glyphicon glyphicon-ok"</span>,
+
+	<span class="key">onLoadSbtc</span> : <span class="bol">null</span>,
+	<span class="key">beforeChange</span> : <span class="bol">null</span>,
+	<span class="key">afterChange</span> : <span class="bol">null</span>
+});
+
+<span class="com">//equivalent of</span>
+$(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks();
+</pre>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Get started</h3>
+						</div>
+						<div class="panel-body">
+							<p>Really? ok e_e Necessary libs:</p>
+							<ul>
+								<li>Framework <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (css)</li>
+								<li>Simple-bt-checks css</li>
+								<li>jQuery 2.x.x</li>
+								<li>Simple-bt-checks js</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">HTML generated for each check</h3>
+						</div>
+						<div class="panel-body">
+<pre class="pre-default">
+<span class="bol">&lt;button</span> <span class="key">type=</span><span class="js">"button"</span> 
+        <span class="key">class=</span><span class="js">"sbtc-btn btn btn-default sbtc-default"</span><span class="bol">&gt;</span>
+	
+	<span class="bol">&lt;span</span> <span class="key">class=</span><span class="js">"sbtc-icon glyphicon glyphicon-ok "</span><span class="bol">&gt;
+	&lt;/span&gt;
+&lt;/button&gt;</span>
+</pre>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div> <!-- /.row -->
+
+		<hr>
+
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright © Joel Thorner 2K15 - <a href="http://joelthorner.com" target="_blank">joelthorner.com</a></p>
+				</div>
+			</div>
+		</footer>
+		<hr>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<!--Joel Bootstrap Gallery Lib -->
+	<script src="js/simple-bt-checks.js"></script>
+
+	<!-- demo -->
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			//states example
+			$('.checked-by-js').prop('checked', true);
+			$('#states-1 input[type="checkbox"]').simpleBtChecks({});
+
+			//sizes example
+			$('#sizes-1 input[type="checkbox"]').simpleBtChecks();
+			$('#sizes-2 input[type="checkbox"]').simpleBtChecks({ size: "x-2" });
+			$('#sizes-3 input[type="checkbox"]').simpleBtChecks({ size: "x-3" });
+
+			//colors example
+			$('.color_1 input[type="checkbox"]').simpleBtChecks({ size: "x-2" }); // default { class : 'btn btn-default' }
+
+			$('.color_2 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-primary' });
+			$('.color_3 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-success' });
+			$('.color_4 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-info' });
+			$('.color_5 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-warning' });
+			$('.color_6 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-danger' });
+			$('.color_7 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-link' });
+
+			//events example
+			$('#events-1 input[type="checkbox"]').simpleBtChecks({
+			    size: "x-2",
+			    icon: "glyphicon glyphicon-heart-empty",
+
+			    onLoadSbtc : function(newNodeElement, index){
+
+			        console.log('function onLoadSbtc - newNodeElement:');
+			        console.log(newNodeElement);
+			        $('#out-ev').text( 'Open js console :P - Input number: ' + index);
+				},
+			    beforeChange : function (isChecked, nodeElement){
+
+			        $('#out-ev-1').text(isChecked);
+			    },
+			    afterChange : function (isChecked, nodeElement){
+
+			        $('#out-ev-2').text(isChecked);
+			        if (isChecked) nodeElement.addClass('btn-success').removeClass('btn-danger');
+			        else  nodeElement.addClass('btn-danger').removeClass('btn-success');
+			    }
+			});
+
+		});
+
+	</script>
+
+</body>
+
+</html>
