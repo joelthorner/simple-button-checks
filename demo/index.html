@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 	<meta charset="utf-8">
@@ -16,9 +15,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- Library CSS -->
 	<link rel="stylesheet" href="css/simple-bt-checks.css">
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- Fantasy checkbox example -->
+	<link rel="stylesheet" href="css/fantasy-example.css">
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -26,13 +24,7 @@
 
 	<style type="text/css">
 		/* demo css */
-		.js { color: #C30; }
-		.key{ color: #4f9fcf; }
-		.bol{ color: #069; }
-		.com{ opacity: 0.5; }
-		.pre-default{background:none;border:none;padding:0px;}
-		#colors-1 label{font-size:12px;}
-		#colors-1 .checkbox{margin-top: 0px;}
+		.js { color: #C30; } .key{ color: #4f9fcf; } .bol{ color: #069; } .com{ opacity: 0.5; } .pre-default { background:none; border:none; padding:0px; } #colors-1 label { font-size:12px; } #colors-1 .checkbox { margin-top: 0px; } body .navbar-inverse .navbar-toggle {border-color: #333;width: calc(100% - 30px);margin: 8px 15px;}
 	</style>
 </head>
 
@@ -50,6 +42,7 @@
 		<li><a href="#sizes">Sizes</a></li>
 		<li><a href="#colors">Colors</a></li>
 		<li><a href="#events">Events</a></li>
+		<li><a href="#customize">Amazing with css! yeah</a></li>
 	</ul>
   </div><!-- /.container-fluid -->
 </nav>
@@ -208,7 +201,7 @@ $(<span class="js">'.color_7 input[type="checkbox"]'</span>).simpleBtChecks({
 			<!-- colors -->
 			<h1 class="page-header" id="events">
 				Events
-				<small>Potato</small>
+				<small>Callbacks</small>
 			</h1>
 			<ul class="list-unstyled">
 				<li><small><b>onLoadSbtc</b>: For each input a node is created. After this node is placed run this event, and return newNodeElement (node) and input loop index (int)</small></li>
@@ -252,10 +245,40 @@ $(<span class="js">'#events-1 input[type="checkbox"]'</span>).simpleBtChecks({
 });
 </pre>
 
+			<!-- customize -->
+			<h1 class="page-header" id="customize">
+				Amazing with full css
+				<small>Yeah!</small>
+			</h1>
+			<p>Only by css :D <a href="css/fantasy-example.css" target="_blank">fantasy-example.css</a></p>
+			<p>For more inspiration visit: <a href="http://tympanus.net/Development/CreativeButtons/" target="_blank">Codrops example</a></p>
+			<hr>
+			<div id="customize-1">
+				<span class="fantasy fantasy-1">
+					<input type="checkbox" checked="">
+				</span>
+				<span class="fantasy fantasy-2">
+					<input type="checkbox" checked="">
+				</span>
+
+				<span class="clearfix"></span>
 			</div>
 
 
+			<h2><small>Code example</small></h2>
+			<hr>
+<pre>
+<span class="com">//basic init</span>
+$(<span class="js">'#customize-1 input[type="checkbox"]'</span>).simpleBtChecks({
+	<span class="key">class</span>: <span class="js">"btn btn-fantasy"</span> <span class="com">//add button custom class css</span>
+});
+</pre>
+
+			</div>
+
+<!-- ----------------------------------SIDE COL---------------------------------- -->
 			<div class="col-md-5" style="margin-top:40px;">
+				<hr class="visible-xs-block" />
 				<div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -288,7 +311,7 @@ $(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks();
 						<div class="panel-body">
 							<p>Really? ok e_e Necessary libs:</p>
 							<ul>
-								<li>Framework <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (css)</li>
+								<li>Framework <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (css) 3.x.x</li>
 								<li>Simple-bt-checks css</li>
 								<li>jQuery 2.x.x</li>
 								<li>Simple-bt-checks js</li>
@@ -379,6 +402,11 @@ $(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks();
 			        if (isChecked) nodeElement.addClass('btn-success').removeClass('btn-danger');
 			        else  nodeElement.addClass('btn-danger').removeClass('btn-success');
 			    }
+			});
+
+			//full css customize example
+			$('#customize-1 input[type="checkbox"]').simpleBtChecks({
+				class: "btn btn-fantasy" //add button custom class css 
 			});
 
 		});

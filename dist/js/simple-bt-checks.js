@@ -1,11 +1,11 @@
 /*!
- * simpleBtChecks v1.1.0
+ * simpleBtChecks v1.1.1
  * http://joelthorner.com
  *
  * Copyright 2015 Joel Thorner - @joelthorner
  */
  
-(function ( $ ) {
+;(function ( $ ) {
  
 	$.fn.simpleBtChecks = function( options ) {
 
@@ -29,15 +29,17 @@
 		this.each(function(index, el) {
 
 			var checked = "";
+			var checked_btn = "sbtc-no-checked";
 			
 			if ( $(this).is(':checked') || $(this).attr('checked') || $(this).prop('checked') ){
 				checked = settings.icon;
+				checked_btn = "sbtc-checked";
 				$(this).prop('checked', true);
 
 			}else{
 				$(this).prop('checked', false);
 			}
-			var template = "<button type=\"button\" class=\"sbtc-btn " + settings.class + " sbtc-" + size + " \">" +
+			var template = "<button type=\"button\" class=\"sbtc-btn " + settings.class + " sbtc-" + size + " " + checked_btn + "\">" +
 									"<span class=\"sbtc-icon " + checked + " \"></span>" +
 								"</button>";
 
@@ -55,12 +57,24 @@
 		   if(settings.beforeChange) _beforeChange(settings.beforeChange, ck.prop("checked"), $(this));
 
 		   if(ck.prop("checked")){ 
-		   	$(this).find('.sbtc-icon').removeClass(settings.icon); 
-		   	ck.prop("checked", false); 
+		   	$(this)
+		   		.removeClass('sbtc-checked')
+		   		.addClass('sbtc-no-checked')
+		   		.find('.sbtc-icon')
+		   		.removeClass(settings.icon); 
+		   	ck
+		   		.prop("checked", false)
+		   		.removeAttr('checked');
 		   }
 		   else{ 
-		   	$(this).find('.sbtc-icon').addClass(settings.icon); 
-		   	ck.prop("checked", true); 
+		   	$(this)
+		   		.removeClass('sbtc-no-checked')
+		   		.addClass('sbtc-checked')
+		   		.find('.sbtc-icon')
+		   		.addClass(settings.icon); 
+		   	ck
+		   		.prop("checked", true)
+		   		.attr('checked', '');
 		   }
 
 		   if(settings.afterChange) _afterChange(settings.afterChange, ck.prop("checked"), $(this));
