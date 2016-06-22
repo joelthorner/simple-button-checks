@@ -1,19 +1,20 @@
 /*!
- * simpleBtChecks v1.1.1
+ * simpleBtChecks v1.1.2
  * http://joelthorner.com
  *
- * Copyright 2015 Joel Thorner - @joelthorner
+ * Copyright 2016 Joel Thorner - @joelthorner
  */
  
 ;(function ( $ ) {
- 
 	$.fn.simpleBtChecks = function( options ) {
+		if(options === 'v') return '1.1.2';
 
 		var settings = $.extend({
 
 			size : "default",
 			class: "btn btn-default",
 			icon : "glyphicon glyphicon-ok",
+			callOriginalEvents : false,
 
 			onLoadSbtc : null,
 			beforeChange : null,
@@ -49,7 +50,7 @@
 			
 		});
 
-		this.prev('.sbtc-btn').on('click', function(event) {
+		this.prev('.sbtc-btn').on('click.simpleBtChecks', function(event) {
 		   
 		   event.stopPropagation();
 		   var ck = $(this).next('input');
@@ -62,9 +63,12 @@
 		   		.addClass('sbtc-no-checked')
 		   		.find('.sbtc-icon')
 		   		.removeClass(settings.icon); 
-		   	ck
-		   		.prop("checked", false)
-		   		.removeAttr('checked');
+
+		   		if (!settings.callOriginalEvents) {
+				   	ck
+				   		.prop("checked", false)
+				   		.removeAttr('checked');
+		   		}
 		   }
 		   else{ 
 		   	$(this)
@@ -72,10 +76,15 @@
 		   		.addClass('sbtc-checked')
 		   		.find('.sbtc-icon')
 		   		.addClass(settings.icon); 
-		   	ck
-		   		.prop("checked", true)
-		   		.attr('checked', '');
+
+		   	if (!settings.callOriginalEvents) {
+			   	ck
+			   		.prop("checked", true)
+			   		.attr('checked', '');
+			   }
 		   }
+
+		   if(settings.callOriginalEvents) ck.click();
 
 		   if(settings.afterChange) _afterChange(settings.afterChange, ck.prop("checked"), $(this));
 

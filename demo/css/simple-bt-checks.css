@@ -1,8 +1,8 @@
 /*!
- * simpleBtChecks v1.1.1
+ * simpleBtChecks v1.1.2
  * http://joelthorner.com
  *
- * Copyright 2015 Joel Thorner - @joelthorner
+ * Copyright 2016 Joel Thorner - @joelthorner
  */
 /* recomended for all inputs to transform (visual javascript bad effects onload script) 
 
@@ -37,7 +37,6 @@ input[type='checkbox'] {
   margin: 0px 0px 2px 0px;
   padding: 0px;
   -webkit-transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.15s;
 }
 .sbtc-icon {
