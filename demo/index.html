@@ -5,486 +5,285 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Joel Bootstrap Gallery">
+	<meta name="description" content="Simple bt checks is a plugin for transform HTML checkbox to cool HTML button with bootstrap.">
 	<meta name="author" content="Joel Thorner">
 
-	<title>Simple-bt-checks - JoelThorner</title>
+	<title>Simple bt checks - JoelThorner</title>
 	<link rel="icon" type="image/png" href="img/icon.png">
 
+
 	<!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
 	<!-- Library CSS -->
-	<link rel="stylesheet" href="css/simple-bt-checks.css">
-	<!-- Fantasy checkbox example -->
-	<link rel="stylesheet" href="css/fantasy-example.css">
+	<link rel="stylesheet" href="../dist/css/simple-bt-checks.css">
+
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<style type="text/css">
-		/* demo css */
-		.js { color: #C30; } .key{ color: #4f9fcf; } .bol{ color: #069; } .com{ opacity: 0.5; } .pre-default { background:none; border:none; padding:0px; } #colors-1 label { font-size:12px; } #colors-1 .checkbox { margin-top: 0px; } body .navbar-inverse .navbar-toggle {border-color: #333;width: calc(100% - 30px);margin: 8px 15px;} pre{ tab-size: 3; }
-	</style>
+	<link rel="stylesheet" href="css/demo.css">
 </head>
 
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<nav class="navbar navbar-inverse" style="border-radius:0px">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <a class="navbar-brand" href="http://joelthorner.com" target="_blank">Joel Thorner</a>
-    </div>
-    <ul class="nav navbar-nav">
-		<li><a href="#states">States</a></li>
-		<li><a href="#sizes">Sizes</a></li>
-		<li><a href="#colors">Colors</a></li>
-		<li><a href="#callbacks">Callbacks</a></li>
-		<li><a href="#orig_events">Original Events</a></li>
-		<li><a href="#customize">Amazing with css! yeah</a></li>
-	</ul>
-  </div><!-- /.container-fluid -->
-</nav>
-	
-	<div class="container">
-		
-		<div class="row">
-
-			<div class="col-md-7">
-				<h1>Simple bt checks <span class="badge"></span></h1>
-				<p>Transform checkbox inputs to bootrap HTML buttons.<br/><a href="https://github.com/joelthorner/simple-bt-checks" target="_blank">View on GitHub</a></p>
-
-				<hr>
-
-				<!-- states -->
-				<h2 class="page-header" id="states">
-					States
-					<small>Demo check's states</small>
-				</h1>
-				<p id="states-1">
-					<span class="checkbox">
-						<label> <input type="checkbox"> Check default </label>
-					</span>
-					<span class="checkbox">
-						<label> <input type="checkbox" value="x"> Check with value </label>
-					</span>
-					<span class="checkbox">
-						<label> <input type="checkbox" value="x" class="checked-by-js"> <small> Checked by jQuery (.prop('checked', true))</small> </label>
-					</span>
-					<span class="checkbox">
-						<label> <input type="checkbox" value="x" checked=""> Checked by atribute HTML </label>
-					</span>
-				</p>
-				<hr>
-
-				<h3><small>Code example</small></h3>
-<pre>
-$(<span class="js">'.checked-by-js'</span>).prop(<span class="js">'checked'</span>, <span class="bol">true</span>); <span class="com">//check input with jQuery</span>
-$(<span class="js">'#states-1 input[type="checkbox"]'</span>).simpleBtChecks();
-</pre>
-				<hr>
-
-				<!-- sizes -->
-				<h2 class="page-header" id="sizes">
-					Sizes
-					<small>'size' plugin setting</small>
-				</h1>
-
-				<p id="sizes-1">
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox"></label>
-					</span>
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-				</p>
-				<p id="sizes-2">
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox"></label>
-					</span>
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-				</p>
-				<p id="sizes-3">
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox"></label>
-					</span>
-					<span class="checkbox" style="display: inline">
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-				</p>
-				<h3><small>Code example</small></h3>
-				<hr>
-<pre>
-$(<span class="js">'#sizes-1 input[type="checkbox"]'</span>).simpleBtChecks();<span class="com">//default size is 'default'</span>
-$(<span class="js">'#sizes-2 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-2"</span> });
-$(<span class="js">'#sizes-3 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-3"</span> });
-</pre>
-				<hr>
-
-
-				<!-- colors -->
-				<h2 class="page-header" id="colors">
-					Colors
-					<small>'class' plugin setting</small>
-				</h1>
-
-				<p>You can pass any class, but we recommend at least 'btn' bootstrap class. Default classes: 'btn btn-default'</p>
-				<hr>
-
-				<div id="colors-1" class="col-xs-12">
-					<span class="checkbox color_1 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_2 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_3 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_4 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_5 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_6 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-
-					<span class="checkbox color_7 col-xs-4 col-sm-3">
-						<label> <input type="checkbox"></label>
-						<label> <input type="checkbox" value="x" checked=""></label>
-					</span>
-				</div>
-				<h3><small>Code example</small></h3>
-				<hr>
-<pre>
-$(<span class="js">'.color_1 input[type="checkbox"]'</span>).simpleBtChecks({ <span class="key">size</span>: <span class="js">"x-2"</span> }); 
-<span class="com">// default bt class: 'btn btn-default'</span>
-
-$(<span class="js">'.color_2 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-primary'</span> 
-});
-$(<span class="js">'.color_3 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-success' </span>
-});
-$(<span class="js">'.color_4 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-info'</span> 
-});
-$(<span class="js">'.color_5 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-warning' </span>
-});
-$(<span class="js">'.color_6 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-danger'</span> 
-});
-$(<span class="js">'.color_7 input[type="checkbox"]'</span>).simpleBtChecks({ 
-	<span class="key">size</span>: <span class="js">'x-2'</span>,
-	<span class="key">class</span> : <span class="js">'btn btn-link'</span> 
-});
-</pre>
-			<hr>
-
-			<!-- callbacks -->
-			<h2 class="page-header" id="callbacks">
-				Callbacks
-			</h1>
-			<ul class="list-unstyled">
-				<li><small><b>onLoadSbtc</b>: For each input a node is created. After this node is placed run this event, and return newNodeElement (node) and input loop index (int)</small></li>
-				<li><small><b>beforeChange</b>: Before check change run beforeChange event, and return (bool) and nodeElement (node)</small></li>
-				<li><small><b>afterChange</b>: After check change run beforeChange event, and return (bool) and nodeElement (node)</small></li>
-			</ul>
-			<hr>
-			<div id="events-1">
-				<span class="checkbox">
-					<label> <input type="checkbox"> Click the magic input!</label>
-				</span>
-<pre>
-<small><b>onLoadSbtc 			</b><span id="out-ev" class='js'></span></small>
-<small><b>beforeChange - is checked? 	</b><span id="out-ev-1" class='bol'></span></small>
-<small><b>afterChange - is checked?	</b><span id="out-ev-2" class='bol'></span></small>
-</pre>
-
-			</div>
-			<h3><small>Code example</small></h3>
-			<hr>
-<pre>
-$(<span class="js">'#events-1 input[type="checkbox"]'</span>).simpleBtChecks({
-    <span class="key">size</span>: <span class="js">"x-2"</span>,
-    <span class="key">icon</span>: <span class="js">"glyphicon glyphicon-heart-empty"</span>,
-    <span class="key">onLoadSbtc</span> : <span class="bol">function</span>(<span class='org'>newNodeElement</span>, <span class='org'>index</span>){
-
-        console.log(<span class="js">'function onLoadSbtc - newNodeElement:'</span>);
-        console.log(<span class='org'>newNodeElement</span>);
-        $(<span class="js">'#out-ev'</span>).text( <span class="js">'Open js console :P - Input number: '</span> + <span class='org'>index</span>);
-    },
-    <span class="key">beforeChange</span> : <span class="bol">function</span> (<span class='org'>isChecked</span>, <span class='org'>nodeElement</span>){
-
-        $(<span class="js">'#out-ev-1'</span>).text(<span class='org'>isChecked</span>);
-    },
-    <span class="key">afterChange</span> : <span class="bol">function</span> (<span class='org'>isChecked</span>, <span class='org'>nodeElement</span>){
-
-        $(<span class="js">'#out-ev-2'</span>).text(<span class='org'>isChecked</span>);
-        if (<span class='org'>isChecked</span>) <span class='org'>nodeElement</span>.addClass(<span class="js">'btn-success'</span>).removeClass(<span class="js">'btn-danger'</span>);
-        else  <span class='org'>nodeElement</span>.addClass(<span class="js">'btn-danger'</span>).removeClass(<span class="js">'btn-success'</span>);
-    }
-});
-</pre>
-
-			<!-- orig_events -->
-			<h2 class="page-header" id="orig_events">
-				Original input events
-				<small>option</small>
-			</h1>
-			<p><code>callOriginalEvents : true</code></p>
-			<p>Enable this option and plugin will simulate input original events: onClick and onChange.</p>
-			<hr>
-			<div id="orig-events-1">
-				<span class="onchange-input">
-					<label><input type="checkbox" checked=""> Change jQuery event binded into original input</label>
-				</span>
-				
-				<span class="clearfix"></span>
-				
-				<span class="onclick-input">
-					<label><input type="checkbox"> Click js event binded into original input</label>
-				</span>
-
-				<span class="clearfix"></span>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="http://joelthorner.com/plugin/simple-bt-checks">Simple Bt Checks</a>
 			</div>
 
-
-			<h3><small>Code example</small></h3>
-			<hr>
-<pre>
-<span class="com">//basic init</span>
-<span class="com">// add change and click events into original input checkbox before init plugin</span>
-$(<span class="js">'#orig-events-1 .onchange-input input'</span>).change(<span class="bol">function</span>(event) {
-	<span class="key">alert</span>(<span class="js">'This is original checkbox "change jQuery event"!'</span>);
-});
-
-<span class="bol">function</span> jsVanillaClick(){
-	<span class="key">alert</span>(<span class="js">'This is original checkbox "click (js vanilla) event"!'</span>);
-}
-<span class="key">document</span>.querySelector(<span class="js">'#orig-events-1 .onclick-input input'</span>)
-	.addEventListener(<span class="js">'click'</span>, jsVanillaClick);
-
-$(<span class="js">'#orig-events-1 input[type="checkbox"]'</span>).simpleBtChecks({
-	<span class="key">callOriginalEvents</span> : <span class="bol">true</span>
-});
-</pre>
-
-			<!-- customize -->
-			<h2 class="page-header" id="customize">
-				Amazing with full css
-				<small>Yeah!</small>
-			</h1>
-			<p>Only by css :D <a href="css/fantasy-example.css" target="_blank">fantasy-example.css</a></p>
-			<p>For more inspiration visit: <a href="http://tympanus.net/Development/CreativeButtons/" target="_blank">Codrops example</a></p>
-			<hr>
-			<div id="customize-1">
-				<span class="fantasy fantasy-1">
-					<input type="checkbox" checked="">
-				</span>
-				<span class="fantasy fantasy-2">
-					<input type="checkbox" checked="">
-				</span>
-
-				<span class="clearfix"></span>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a class="page-scroll" href="#get-started">Get started</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#api">API</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#demos">Demos</a>
+					</li>
+				</ul>
 			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
+	<div id="banner"></div>
+	<div id="banner-bottom">
+		<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download joelthorner/simple-bt-checks on GitHub">Download</a>
+		<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/issues" data-icon="octicon-issue-opened" aria-label="Issue joelthorner/simple-bt-checks on GitHub">Issue</a>
+		<a class="github-button" href="https://github.com/joelthorner" aria-label="Follow @joelthorner on GitHub">Follow @joelthorner</a>
+	</div>
 
-			<h3><small>Code example</small></h3>
-			<hr>
-<pre>
-<span class="com">//basic init</span>
-$(<span class="js">'#customize-1 input[type="checkbox"]'</span>).simpleBtChecks({
-	<span class="key">class</span>: <span class="js">"btn btn-fantasy"</span> <span class="com">//add button custom class css</span>
-});
-</pre>
-
-
-			</div>
-
-<!-- ··································SIDE COL·································· -->
-			<div class="col-md-5" style="margin-top:40px;">
-				<hr class="visible-xs-block" />
-				<div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">Options</h4>
-						</div>
-						<div class="panel-body">
-<pre class="pre-default">
-<span class="com">//default options</span>
-$(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks
-({
-	<span class="key">size</span>: <span class="js">"default"</span>,
-	<span class="key">class</span>: <span class="js">"btn btn-default"</span>,
-	<span class="key">icon</span> : <span class="js">"glyphicon glyphicon-ok"</span>,
-
-	<span class="key">callOriginalEvents</span> : <span class="bol">false</span>,
-
-	<span class="key">onLoadSbtc</span> : <span class="bol">null</span>,
-	<span class="key">beforeChange</span> : <span class="bol">null</span>,
-	<span class="key">afterChange</span> : <span class="bol">null</span>
-});
-
-<span class="com">//equivalent of</span>
-$(<span class="js">'input[type="checkbox"]'</span>).simpleBtChecks();
-</pre>
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">Get started</h4>
-						</div>
-						<div class="panel-body">
-							<p>Includes:</p>
-							<ul>
-								<li><b>Css</b></li>
-								<li>Framework <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (css) 3.x. <small>Or .btn css only</small></li>
-								<li>Simple-bt-checks css</li>
-								<li><b>Js</b></li>
-								<li>jQuery 2.x</li>
-								<li>Simple-bt-checks js</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">HTML generated for each check</h4>
-						</div>
-						<div class="panel-body">
-<pre class="pre-default">
-<span class="bol">&lt;button</span> <span class="key">type=</span><span class="js">"button"</span> 
-        <span class="key">class=</span><span class="js">"sbtc-btn btn btn-default sbtc-default"</span><span class="bol">&gt;</span>
-	
-	<span class="bol">&lt;span</span> <span class="key">class=</span><span class="js">"sbtc-icon glyphicon glyphicon-ok "</span><span class="bol">&gt;
-	&lt;/span&gt;
-&lt;/button&gt;</span>
-</pre>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-		</div> <!-- /.row -->
-
-		<hr>
-
-		<footer>
+	<section id="get-started">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p>Copyright © Joel Thorner 2K15 - <a href="http://joelthorner.com" target="_blank">joelthorner.com</a></p>
+					<h2>Getting started</h2>
+					<h3>1. Include Simple bt checks files to website/app</h3>
+					<p>After that we need to include CSS and JS files to our website/app. In your html file:</p>
+					<p>Optionaly we can use <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+<pre><code class="html xml">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+   ...
+   &lt;link rel="stylesheet" href="path/to/bootstrap3.x.x.min.css"&gt;&lt;!-- optional framework --&gt;
+   &lt;link rel="stylesheet" href="path/to/simple-bt-checks.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   ...
+   &lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="path/to/bootstrap3.x.x.min.js"&gt;&lt;/script&gt;&lt;!-- optional framework --&gt;
+   &lt;script src="path/to/simple-bt-checks.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					
+					<h3>2. Add HTML inputs</h3>
+					<p>This plugin contemplates several label-input formats:</p>
+<pre><code class="html xml">&lt;!-- sibiling label-input --&gt;
+&lt;div class="checkbox"&gt;
+   &lt;input type="checkbox" name="aValue" id="a" value="344"&gt;
+   &lt;label for="a"&gt;Address&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class="checkbox"&gt;
+   &lt;label for="b"&gt;Address&lt;/label&gt;
+   &lt;input type="checkbox" name="bValue" id="b" value="1"&gt;
+&lt;/div&gt;
+
+&lt;!-- Bootstrap recomended --&gt;
+&lt;div class="checkbox"&gt;
+   &lt;label&gt;
+      &lt;input type="checkbox" checked="checked"&gt; Check me out
+   &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+					<h3>3. Initialize plugin</h3>
+					<p>After load jquery and simple-bt-checks js files</p>
+<pre><code class="js">$(document).ready(function () {
+   // initialize plugin when document ready  
+   $('input[type="checkbox"]').simpleBtChecks({
+      size : "default",
+      btnClass: "btn btn-default",
+      checkedIcon : "glyphicon glyphicon-ok"
+   });
+});</code></pre>
 				</div>
 			</div>
-		</footer>
-		<hr>
-	</div>
+		</div>
+	</section>
+
+	<section id="api">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Api</h2>
+					<h3>Parameters</h3>
+					<p>List of all available parameters:</p>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Parameter</th>
+								<th>Type</th>
+								<th>Default</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>size</code></td>
+								<td><code>string</code></td>
+								<td><code>'default'</code></td>
+								<td>Could be "default", "x-2" or "x-3"</td>
+							</tr>
+							<tr>
+								<td><code>btnClass</code></td>
+								<td><code>string</code></td>
+								<td><code>'btn btn-default'</code></td>
+								<td>Class attribute value for new html button tag</td>
+							</tr>
+							<tr>
+								<td><code>checkedIcon</code></td>
+								<td><code>string</code></td>
+								<td><code>'glyphicon glyphicon-ok'</code></td>
+								<td>icon font class (or other class)</td>
+							</tr>
+							<tr>
+								<td><code>bootstrapUse</code></td>
+								<td><code>boolean</code></td>
+								<td><code>true</code></td>
+								<td>If not use Bootstrap framework set to false</td>
+							</tr>
+							<tr>
+								<td><code>wrapContainer</code></td>
+								<td><code>string</code></td>
+								<td><code>'none'</code></td>
+								<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
+							</tr>
+							<tr>
+								<td><code>strictLabel</code></td>
+								<td><code>boolean</code></td>
+								<td><code>true</code></td>
+								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label.</td>
+							</tr>
+							<tr>
+								<th colspan="4"><center>Callbacks</center></th>
+							</tr>
+							<tr>
+								<td><code>onInit(simpleBtChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed right after plugin initialization</td>
+							</tr>
+							<tr>
+								<td><code>onChange(simpleBtChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Function, will be executed right before checkbox input change</td>
+							</tr>
+							<tr>
+								<td><code>changeCallback(simpleBtChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed right after checkbox input change</td>
+							</tr>
+							<tr>
+								<td><code>onDestroy(simpleBtChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed when you destroy Swiper</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h3>Methods</h3>
+					<p>After we initialize input/s we have its initialized instance in variable (like myInput variable in example below) with helpful methods:</p>
+<pre><code class="js">var myInput = $('input[type="checkbox"]').simpleBtChecks({
+   size : 'x-3'
+});
+
+myInput.simpleBtChecks('destroy');</code></pre>
+					<table class="table table-bordered" id="t_methods">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>myInput.simpleBtChecks(<span>'destroy'</span>);</td>
+								<td>Destroy simpleBtCheck instance and detach all events listeners</td>
+							</tr>
+							<tr>
+								<td>myInput.simpleBtChecks(<span>'addListener'</span>, <span>node</span>);</td>
+								<td>
+									Add change checkbox input event to a node. Example:
+<pre><code class="js">myInput.simpleBtChecks('addListener', $('#div-1'));</code></pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="demos">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Demos</h2>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<input type="checkbox">
+
 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	
-	<!--Joel Bootstrap Gallery Lib -->
-	<script src="js/simple-bt-checks.js"></script>
 
-	<!-- demo -->
-	<script type="text/javascript">
-		$( document ).ready(function() {
+	<!-- Bootstrap js -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-			//states example
-				$('.checked-by-js').prop('checked', true);
-				$('#states-1 input[type="checkbox"]').simpleBtChecks();
+	<!-- Joel Bootstrap Gallery Lib -->
+	<script src="../dist/js/simple-bt-checks.js"></script>
+	<script src="js/highlight.pack.js"></script>
 
-			// sizes example
-				$('#sizes-1 input[type="checkbox"]').simpleBtChecks();
-				$('#sizes-2 input[type="checkbox"]').simpleBtChecks({ size: "x-2" });
-				$('#sizes-3 input[type="checkbox"]').simpleBtChecks({ size: "x-3" });
+	<script>
+		hljs.initHighlightingOnLoad();
 
-			// colors example
-				$('.color_1 input[type="checkbox"]').simpleBtChecks({ size: "x-2" }); 
-				// default { class : 'btn btn-default' }
-
-				$('.color_2 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-primary' });
-				$('.color_3 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-success' });
-				$('.color_4 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-info' });
-				$('.color_5 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-warning' });
-				$('.color_6 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-danger' });
-				$('.color_7 input[type="checkbox"]').simpleBtChecks({ size: 'x-2', class : 'btn btn-link' });
-
-			// events example
-				$('#events-1 input[type="checkbox"]').simpleBtChecks({
-					size: "x-2",
-					icon: "glyphicon glyphicon-heart-empty",
-
-					onLoadSbtc : function(newNodeElement, index){
-
-						console.log('function onLoadSbtc - newNodeElement:');
-						console.log(newNodeElement);
-						$('#out-ev').text( 'Open js console :P - Input number: ' + index);
-					},
-				   beforeChange : function (isChecked, nodeElement){
-
-				      $('#out-ev-1').text(isChecked);
-				   },
-				   afterChange : function (isChecked, nodeElement){
-
-				      $('#out-ev-2').text(isChecked);
-				      if (isChecked) nodeElement.addClass('btn-success').removeClass('btn-danger');
-				      else  nodeElement.addClass('btn-danger').removeClass('btn-success');
-				   }
-				});
-
-			// original input events example
-				// add change and click events into original input checkbox before init plugin
-				$('#orig-events-1 .onchange-input input').change(function(event) {
-					alert('This is original checkbox "change jQuery event"!');
-				});
-				
-				function jsVanillaClick(){
-					alert('This is original checkbox "click (js vanilla) event"!');
-				}
-				document.querySelector('#orig-events-1 .onclick-input input')
-					.addEventListener('click', jsVanillaClick);
-
-				$('#orig-events-1 input[type="checkbox"]').simpleBtChecks({
-					callOriginalEvents : true
-				});
-
-			// full css customize example
-				$('#customize-1 input[type="checkbox"]').simpleBtChecks({
-					class: "btn btn-fantasy" //add button custom class css 
-				});
-
+		var myInput = $('input[type="checkbox"]').simpleBtChecks({
+			size : 'x-3'
 		});
 
+		myInput.on('onInit', function () {
+		    console.log('slide change start');
+		});
+		// myInput.simpleBtChecks('destroy');
+
+		// .simpleBtChecks('addListener', $('.iam'))
+
+		// .simpleBtChecks('destroy');
+		$('#year').text(new Date().getFullYear());
 	</script>
 
-	<!-- ignore this -->
-	<script>$('.badge').html($.fn.simpleBtChecks('v'));</script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
