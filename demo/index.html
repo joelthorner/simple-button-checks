@@ -59,11 +59,22 @@
 		<!-- /.container -->
 	</nav>
 
-	<div id="banner"></div>
+	<div id="banner">
+		<div class="container">
+			<input type="checkbox" id="c1" checked>
+			<input type="checkbox" id="c2" checked>
+			<input type="checkbox" id="c3" checked>
+			<div class="title">
+				<h1>Simple Bt Checks</h1><p>Transform inputs checkbox to HTML button :D</p>
+			</div>
+		</div>
+	</div>
 	<div id="banner-bottom">
-		<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download joelthorner/simple-bt-checks on GitHub">Download</a>
-		<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/issues" data-icon="octicon-issue-opened" aria-label="Issue joelthorner/simple-bt-checks on GitHub">Issue</a>
-		<a class="github-button" href="https://github.com/joelthorner" aria-label="Follow @joelthorner on GitHub">Follow @joelthorner</a>
+		<div class="container">
+			<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download joelthorner/simple-bt-checks on GitHub">Download</a>
+			<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/issues" data-icon="octicon-issue-opened" data-count-api="/repos/joelthorner/simple-bt-checks#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue joelthorner/simple-bt-checks on GitHub">Issue</a>
+			<a class="github-button" href="https://github.com/joelthorner" aria-label="Follow @joelthorner on GitHub">Follow @joelthorner</a>
+		</div>
 	</div>
 
 	<section id="get-started">
@@ -260,21 +271,41 @@ myInput.simpleBtChecks('destroy');</code></pre>
 
 	<!-- Bootstrap js -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-	<!-- Joel Bootstrap Gallery Lib -->
+	
 	<script src="../dist/js/simple-bt-checks.js"></script>
 	<script src="js/highlight.pack.js"></script>
 
 	<script>
 		hljs.initHighlightingOnLoad();
-
-		var myInput = $('input[type="checkbox"]').simpleBtChecks({
-			size : 'x-3'
+		$('#c1').simpleBtChecks({btnClass : 'superbig-1 btn btn-default'});
+		$('#c2').simpleBtChecks({btnClass : 'superbig-2 btn btn-default'});
+		
+		$('#c3').simpleBtChecks({
+			btnClass : 'superbig-3 btn btn-default',
+			btnAttributes : {
+				'data-toggle' : "tooltip",
+				'data-placement' : "top"
+			},
+			onInit : function (simpleBtChecks) {
+				simpleBtChecks.$btn.tooltip({
+					trigger : 'hover',
+					title : function () {
+						if ($(this).hasClass('sbtc-checked')) {
+							return 'Checked :D';
+						}else {
+							return 'No checked :(';
+						}
+					}
+				}); 
+			}
 		});
+		// var myInput = $('input[type="checkbox"]').simpleBtChecks({
+		// 	size : 'x-3'
+		// });
 
-		myInput.on('onInit', function () {
-		    console.log('slide change start');
-		});
+		// myInput.on('onInit', function () {
+		//     console.log('slide change start');
+		// });
 		// myInput.simpleBtChecks('destroy');
 
 		// .simpleBtChecks('addListener', $('.iam'))

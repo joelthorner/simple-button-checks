@@ -1,16 +1,20 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
-body{font-family: 'Open Sans', sans-serif;}
+body{font-family: 'Open Sans', sans-serif;padding-top:54px;}
 .navbar-default{background-color:#464030;border-color:#E2F224;border-bottom-width:4px}
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{color:#FFF;transition:color 350ms ease}
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{color:#E2F224}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{color:#FFF;background-color: #635F45}
+.title{display: inline-block;}
+.title p{margin-bottom: 0;color: #FFF;}
+h1{font-weight: bold;color: #FFF;margin-bottom: 0;}
 h2, .h2{color:#464030;font-size:26px}
 .h3, h3{font-size:20px}
 .h3, h3, .h4, h4{color:#635F45}
 p{font-size:12px}
-pre{padding:0;font-size:12px}
-#banner{/* background-image:url(../img/bg.jpg);background-repeat:no-repeat;background-size:cover; */padding-top:54px;height:200px;background-color: #B7E20C;}
-#banner-bottom{height: 42px;background-color: #E2F224;padding: 11px 20px;text-align: right;}
+pre{padding:0;font-size:12px;}
+#banner{height:146px;background-color: #B7E20C;padding: 23px 15px;background-image: url(../img/bg.jpg);background-position: center bottom;background-size: cover;background-repeat: no-repeat;}
+#banner .btn{vertical-align: bottom;margin-right: 15px;}
+#banner-bottom{height: 42px;background-color: #E2F224;padding: 11px 0px;text-align: right;}
 .table-bordered>thead>tr>th{border-bottom-width:1px}
 table{font-size:12px}
 #t_methods tr td:first-child{font-family: Menlo,Monaco,Consolas,"Courier New",monospace;font-size: 90%;}
@@ -45,3 +49,10 @@ th[colspan="4"]{background:#eee}
 .hljs-addition{background:#dfd}
 .diff .hljs-change{background:#0086b3}
 .hljs-chunk{color:#aaa}
+.sbtc-btn.superbig-1 {height: 100px;width: 100px;border-radius: 20px;outline:none !important;}
+.sbtc-btn.superbig-1 .sbtc-icon{font-size: 72px;margin: 0;padding: 0;}
+.sbtc-btn.superbig-2 {height: 75px;width: 75px;border-radius: 15px;outline:none !important;}
+.sbtc-btn.superbig-2 .sbtc-icon{	font-size: 52px;margin: 0;padding: 0 3px 0 0;}
+.sbtc-btn.superbig-3 {height: 50px;width: 50px;border-radius: 10px;outline:none !important;}
+.sbtc-btn.superbig-3 .sbtc-icon{font-size: 35px;margin: 0;padding: 0;}
+

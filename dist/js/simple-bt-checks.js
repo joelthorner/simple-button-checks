@@ -30,6 +30,8 @@
 			// <label for="country"></label> <input id="country" type="checkbox">
 			strictLabel : true,
 
+			btnAttributes : {},
+
 			onInit : null,
 			onChange : null,
 			changeCallback : null,
@@ -172,9 +174,14 @@
 			'class' : btnClasses
 		});
 
+		// option attributes button html
+		$.each(plugin.options.btnAttributes, function(index, val) {
+			btn.attr(index, val);
+		});
+
 		// save btn into node and append
 		plugin.$btn = btn;
-		plugin.$element.before(plugin.$btn);
+		plugin.$element.after(plugin.$btn);
 
 	}
 
@@ -183,7 +190,7 @@
 		plugin.$btn.on('click.bs.sbtc', function(event) {
 			event.preventDefault();
 			event.stopPropagation();
-			$(this).next('.sbtc-initialized').click();
+			$(this).prev('.sbtc-initialized').click();
 		});
 
 		plugin.$element.parent().find(plugin.labelToInput).on('click.bs.sbtc', function(event) {
