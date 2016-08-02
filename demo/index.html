@@ -148,92 +148,94 @@
 					<h2>Api</h2>
 					<h3>Parameters</h3>
 					<p>List of all available parameters:</p>
-					<table class="table table-bordered">
-						<thead>
-							<tr>
-								<th>Parameter</th>
-								<th>Type</th>
-								<th>Default</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><code>size</code></td>
-								<td><code>string</code></td>
-								<td><code>'default'</code></td>
-								<td>Could be "default", "x-2" or "x-3"</td>
-							</tr>
-							<tr>
-								<td><code>btnClass</code></td>
-								<td><code>string</code></td>
-								<td><code>'btn btn-default'</code></td>
-								<td>Class attribute value for new html button tag</td>
-							</tr>
-							<tr>
-								<td><code>checkedIcon</code></td>
-								<td><code>string</code></td>
-								<td><code>'glyphicon glyphicon-ok'</code></td>
-								<td>icon font class (or other class)</td>
-							</tr>
-							<tr>
-								<td><code>bootstrapUse</code></td>
-								<td><code>boolean</code></td>
-								<td><code>true</code></td>
-								<td>If not use Bootstrap framework set to false</td>
-							</tr>
-							<tr>
-								<td><code>wrapContainer</code></td>
-								<td><code>string</code></td>
-								<td><code>'none'</code></td>
-								<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
-							</tr>
-							<tr>
-								<td><code>strictLabel</code></td>
-								<td><code>boolean|null</code></td>
-								<td><code>true</code></td>
-								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
-							</tr>
-							<tr>
-								<td><code>btnAttributes</code></td>
-								<td><code>object</code></td>
-								<td><code>{}</code></td>
-								<td>
-									Add attribute name - value into new html button. Example:
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Parameter</th>
+									<th>Type</th>
+									<th>Default</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>size</code></td>
+									<td><code>string</code></td>
+									<td><code>'default'</code></td>
+									<td>Could be "default", "x-2" or "x-3"</td>
+								</tr>
+								<tr>
+									<td><code>btnClass</code></td>
+									<td><code>string</code></td>
+									<td><code>'btn btn-default'</code></td>
+									<td>Class attribute value for new html button tag</td>
+								</tr>
+								<tr>
+									<td><code>checkedIcon</code></td>
+									<td><code>string</code></td>
+									<td><code>'glyphicon glyphicon-ok'</code></td>
+									<td>icon font class (or other class)</td>
+								</tr>
+								<tr>
+									<td><code>bootstrapUse</code></td>
+									<td><code>boolean</code></td>
+									<td><code>true</code></td>
+									<td>If not use Bootstrap framework set to false</td>
+								</tr>
+								<tr>
+									<td><code>wrapContainer</code></td>
+									<td><code>string</code></td>
+									<td><code>'none'</code></td>
+									<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
+								</tr>
+								<tr>
+									<td><code>strictLabel</code></td>
+									<td><code>boolean|null</code></td>
+									<td><code>true</code></td>
+									<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
+								</tr>
+								<tr>
+									<td><code>btnAttributes</code></td>
+									<td><code>object</code></td>
+									<td><code>{}</code></td>
+									<td>
+										Add attribute name - value into new html button. Example:
 <pre><code class="js">btnAttributes: {
    title : 'string value'
 }</code></pre>
-								</td>
-							</tr>
-							<tr>
-								<th colspan="4"><center>Callbacks</center></th>
-							</tr>
-							<tr>
-								<td><code>onInit(simpleBtChecks)</code></td>
-								<td><code>function</code></td>
-								<td><code>null</code></td>
-								<td>Callback function, will be executed right after plugin initialization</td>
-							</tr>
-							<tr>
-								<td><code>onChange(simpleBtChecks)</code></td>
-								<td><code>function</code></td>
-								<td><code>null</code></td>
-								<td>Function, will be executed right before checkbox input change</td>
-							</tr>
-							<tr>
-								<td><code>changeCallback(simpleBtChecks)</code></td>
-								<td><code>function</code></td>
-								<td><code>null</code></td>
-								<td>Callback function, will be executed right after checkbox input change</td>
-							</tr>
-							<tr>
-								<td><code>onDestroy(simpleBtChecks)</code></td>
-								<td><code>function</code></td>
-								<td><code>null</code></td>
-								<td>Callback function, will be executed when you destroy Swiper</td>
-							</tr>
-						</tbody>
-					</table>
+									</td>
+								</tr>
+								<tr>
+									<th colspan="4"><center>Callbacks</center></th>
+								</tr>
+								<tr>
+									<td><code>onInit(simpleBtChecks)</code></td>
+									<td><code>function</code></td>
+									<td><code>null</code></td>
+									<td>Callback function, will be executed right after plugin initialization</td>
+								</tr>
+								<tr>
+									<td><code>onChange(simpleBtChecks)</code></td>
+									<td><code>function</code></td>
+									<td><code>null</code></td>
+									<td>Function, will be executed right before checkbox input change</td>
+								</tr>
+								<tr>
+									<td><code>changeCallback(simpleBtChecks)</code></td>
+									<td><code>function</code></td>
+									<td><code>null</code></td>
+									<td>Callback function, will be executed right after checkbox input change</td>
+								</tr>
+								<tr>
+									<td><code>onDestroy(simpleBtChecks)</code></td>
+									<td><code>function</code></td>
+									<td><code>null</code></td>
+									<td>Callback function, will be executed when you destroy Swiper</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
 					<h3>Methods</h3>
 					<p>After we initialize input/s we have its initialized instance in variable (like myInput variable in example below) with helpful methods:</p>
@@ -242,27 +244,29 @@
 });
 
 myInput.simpleBtChecks('destroy');</code></pre>
-					<table class="table table-bordered" id="t_methods">
-						<thead>
-							<tr>
-								<th>Method</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>myInput.simpleBtChecks(<span>'destroy'</span>);</td>
-								<td>Destroy simpleBtCheck instance and detach all events listeners</td>
-							</tr>
-							<tr>
-								<td>myInput.simpleBtChecks(<span>'addListener'</span>, <span>node</span>);</td>
-								<td>
-									Add change checkbox input event to a node. Example:
+					<div class="table-responsive">
+						<table class="table table-bordered" id="t_methods">
+							<thead>
+								<tr>
+									<th>Method</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>myInput.simpleBtChecks(<span>'destroy'</span>);</td>
+									<td>Destroy simpleBtCheck instance and detach all events listeners</td>
+								</tr>
+								<tr>
+									<td>myInput.simpleBtChecks(<span>'addListener'</span>, <span>node</span>);</td>
+									<td>
+										Add change checkbox input event to a node. Example:
 <pre><code class="js">myInput.simpleBtChecks('addListener', $('#div-1'));</code></pre>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
 				</div>
 			</div>
