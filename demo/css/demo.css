@@ -1,0 +1,68 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
+body{font-family: 'Open Sans', sans-serif;padding-top:54px;margin-bottom: 54px;}
+.navbar-default{background-color:#464030;border-color:#E2F224;border-bottom-width:4px}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{color:#FFF;transition:color 350ms ease}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{color:#E2F224}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{color:#FFF;background-color: #635F45}
+.title{display: inline-block;}
+#intro p{font-size: 14px;color: #635F45;margin: 15px 0 0 0;}
+.title p{margin-bottom: 0;color: #FFF;}
+h1{font-weight: bold;color: #FFF;margin-bottom: 0;	text-shadow: 2px 2px 0px #b5cf00;}
+h2, .h2{color:#464030;font-size:26px}
+.h3, h3{font-size:20px}
+.h3, h3, .h4, h4{color:#635F45}
+p{font-size:12px}
+pre{padding:0;font-size:12px;}
+#banner{height:146px;background-color: #B7E20C;padding: 23px 15px;background-image: url(../img/bg.jpg);background-position: center bottom;background-size: cover;background-repeat: no-repeat;}
+#banner .btn{vertical-align: bottom;margin-right: 15px;}
+#banner-bottom{height: 42px;background-color: #E2F224;padding: 11px 0px;text-align: right;}
+.table-bordered>thead>tr>th{border-bottom-width:1px}
+table{font-size:12px}
+#t_methods tr td:first-child{font-family: Menlo,Monaco,Consolas,"Courier New",monospace;font-size: 90%;}
+table code, #t_methods tr td:first-child span{background-color:transparent;color:#8c2418}
+table:not(#t_methods) tbody tr td:nth-child(2) code{color:#006700}
+th[colspan="4"]{background:#eee}
+.hljs{display:block;padding:10px;background:#F0F0F0}
+.hljs, .hljs-subst, .hljs-tag .hljs-title, .lisp .hljs-title, .clojure .hljs-built_in, .nginx .hljs-title{color:#000}
+.hljs-string, .hljs-title, .hljs-constant, .hljs-parent, .hljs-tag .hljs-value, .hljs-rules .hljs-value, .hljs-rules .hljs-value .hljs-number, .hljs-preprocessor, .hljs-pragma, .haml .hljs-symbol, .ruby .hljs-symbol, .ruby .hljs-symbol .hljs-string, .hljs-aggregate, .hljs-template_tag, .django .hljs-variable, .smalltalk .hljs-class, .hljs-addition, .hljs-flow, .hljs-stream, .bash .hljs-variable, .apache .hljs-tag, .apache .hljs-cbracket, .tex .hljs-command, .tex .hljs-special, .erlang_repl .hljs-function_or_atom, .asciidoc .hljs-header, .markdown .hljs-header, .coffeescript .hljs-attribute{color:#800}
+.smartquote, .hljs-comment, .hljs-annotation, .hljs-template_comment, .diff .hljs-header, .hljs-chunk, .asciidoc .hljs-blockquote, .markdown .hljs-blockquote{color:#888}
+.hljs-number, .hljs-date, .hljs-regexp, .hljs-literal, .hljs-hexcolor, .smalltalk .hljs-symbol, .smalltalk .hljs-char, .go .hljs-constant, .hljs-change, .lasso .hljs-variable, .makefile .hljs-variable, .asciidoc .hljs-bullet, .markdown .hljs-bullet, .asciidoc .hljs-link_url, .markdown .hljs-link_url{color:#080}
+.hljs-label, .hljs-javadoc, .ruby .hljs-string, .hljs-decorator, .hljs-filter .hljs-argument, .hljs-localvars, .hljs-array, .hljs-attr_selector, .hljs-important, .hljs-pseudo, .hljs-pi, .haml .hljs-bullet, .hljs-doctype, .hljs-deletion, .hljs-envvar, .hljs-shebang, .apache .hljs-sqbracket, .nginx .hljs-built_in, .tex .hljs-formula, .erlang_repl .hljs-reserved, .hljs-prompt, .asciidoc .hljs-link_label, .markdown .hljs-link_label, .vhdl .hljs-attribute, .clojure .hljs-attribute, .asciidoc .hljs-attribute, .lasso .hljs-attribute, .coffeescript .hljs-property, .hljs-phony{color:#88F}
+.hljs-keyword, .hljs-id, .hljs-title, .hljs-built_in, .hljs-aggregate, .css .hljs-tag, .hljs-javadoctag, .hljs-phpdoc, .hljs-yardoctag, .smalltalk .hljs-class, .hljs-winutils, .bash .hljs-variable, .apache .hljs-tag, .go .hljs-typename, .tex .hljs-command, .asciidoc .hljs-strong, .markdown .hljs-strong, .hljs-request, .hljs-status{font-weight:700}
+.asciidoc .hljs-emphasis, .markdown .hljs-emphasis{font-style:italic}
+.nginx .hljs-built_in{font-weight:400}
+.coffeescript .javascript, .javascript .xml, .lasso .markup, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata{opacity:.5}
+.hljs{display:block;padding:10px;color:#333;background: #fefefe;}
+.hljs-comment, .hljs-template_comment, .diff .hljs-header, .hljs-javadoc{color:#998;font-style:italic}
+.hljs-keyword, .css .rule .hljs-keyword, .hljs-winutils, .javascript .hljs-title, .nginx .hljs-title, .hljs-subst, .hljs-request, .hljs-status{color:#333;font-weight:700}
+.hljs-number, .hljs-hexcolor, .ruby .hljs-constant{color:#099}
+.hljs-string, .hljs-tag .hljs-value, .hljs-phpdoc, .tex .hljs-formula{color:#d14}
+.hljs-title, .hljs-id, .coffeescript .hljs-params, .scss .hljs-preprocessor{color:#900;font-weight:700}
+.javascript .hljs-title, .lisp .hljs-title, .clojure .hljs-title, .hljs-subst{font-weight:400}
+.hljs-class .hljs-title, .haskell .hljs-type, .vhdl .hljs-literal, .tex .hljs-command{color:#458;font-weight:700}
+.hljs-tag, .hljs-tag .hljs-title, .hljs-rules .hljs-property, .django .hljs-tag .hljs-keyword{color:navy;font-weight:400}
+.hljs-attribute, .hljs-variable, .lisp .hljs-body{color:teal}
+.hljs-regexp{color:#009926}
+.hljs-symbol, .ruby .hljs-symbol .hljs-string, .lisp .hljs-keyword, .tex .hljs-special, .hljs-prompt{color:#990073}
+.hljs-built_in, .lisp .hljs-title, .clojure .hljs-built_in{color:#0086b3}
+.hljs-preprocessor, .hljs-pragma, .hljs-pi, .hljs-doctype, .hljs-shebang, .hljs-cdata{color:#999;font-weight:700}
+.hljs-deletion{background:#fdd}
+.hljs-addition{background:#dfd}
+.diff .hljs-change{background:#0086b3}
+.hljs-chunk{color:#aaa}
+.sbtc-btn.superbig-1 {height: 100px;width: 100px;border-radius: 20px;outline:none !important;}
+.sbtc-btn.superbig-1 .sbtc-icon{font-size: 72px;margin: 0;padding: 0;}
+.sbtc-btn.superbig-2 {height: 75px;width: 75px;border-radius: 15px;outline:none !important;}
+.sbtc-btn.superbig-2 .sbtc-icon{	font-size: 52px;margin: 0;padding: 0 3px 0 0;}
+.sbtc-btn.superbig-3 {height: 50px;width: 50px;border-radius: 10px;outline:none !important;}
+.sbtc-btn.superbig-3 .sbtc-icon{font-size: 35px;margin: 0;padding: 0;}
+.demo-link-source{position: relative;margin-right: 20px;text-decoration: none;padding-right: 15px;}
+.demo-link-source:before{width: 4px;height: 4px;border-right: 1px solid #B7E20C;border-top: 1px solid #B7E20C;content: '';right: 3px;top: 50%;margin-top: -2px;position: absolute;}
+.demo-link-source:after {content: '';position: absolute;width: 10px;height: 10px;border-radius: 2px;border: 1px solid #B7E20C;right: 0;top: 50%;margin-top: -5px;}
+.iframe iframe{height: 180px;width: 100%;border: 1px solid #ddd; } 
+section a{	color: #B7E20C;border-bottom: 1px solid #B7C09B;}
+section a:focus, a:hover {color: #635F45;text-decoration: none;border-bottom-color: #464030;}
+section a, .demo-link-source:before, .demo-link-source:after{transition: all 300ms ease-in-out;}
+.demo-link-source:hover:before, .demo-link-source:hover:after{border-color: #635F45;}
+.navbar-default .navbar-toggle, .navbar-default .navbar-collapse, .navbar-default .navbar-form {border-color: #464030;}
+@media(max-width: 650px){#banner{height: auto;}}

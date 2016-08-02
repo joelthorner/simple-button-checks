@@ -1,9 +1,3 @@
-/*!
- * Simple bt checks 2.0.0
- * http://joelthorner.com/plugin/simple-bt-checks
- *
- * Copyright 2016 Joel Thorner - @joelthorner
- */
 !function ($) {
 
 	"use strict";
