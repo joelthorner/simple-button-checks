@@ -65,7 +65,7 @@
 			<input type="checkbox" id="c2" checked>
 			<input type="checkbox" id="c3" checked>
 			<div class="title">
-				<h1>Simple Bt Checks</h1><p>Transform inputs checkbox to HTML button :D</p>
+				<h1>Simple Bt Checks</h1>
 			</div>
 		</div>
 	</div>
@@ -76,6 +76,12 @@
 			<a class="github-button" href="https://github.com/joelthorner" aria-label="Follow @joelthorner on GitHub">Follow @joelthorner</a>
 		</div>
 	</div>
+
+	<section id="intro">
+		<div class="container">
+			<p>Simple bt checks is a simple plugin for transform checkbox inputs to html buttons for css customize. High performance, keyboard support and preserve original input click/change events.</p>
+		</div>
+	</section>
 
 	<section id="get-started">
 		<div class="container">
@@ -94,7 +100,7 @@
 &lt;/head&gt;
 &lt;body&gt;
    ...
-   &lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;
+   &lt;script src="path/to/jquery2/3.x.x.min.js"&gt;&lt;/script&gt;
    &lt;script src="path/to/bootstrap3.x.x.min.js"&gt;&lt;/script&gt;&lt;!-- optional framework --&gt;
    &lt;script src="path/to/simple-bt-checks.min.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
@@ -184,9 +190,20 @@
 							</tr>
 							<tr>
 								<td><code>strictLabel</code></td>
-								<td><code>boolean</code></td>
+								<td><code>boolean|null</code></td>
 								<td><code>true</code></td>
-								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label.</td>
+								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
+							</tr>
+							<tr>
+								<td><code>btnAttributes</code></td>
+								<td><code>object</code></td>
+								<td><code>{}</code></td>
+								<td>
+									Add attribute name - value into new html button. Example:
+<pre><code class="js">btnAttributes: {
+   title : 'string value'
+}</code></pre>
+								</td>
 							</tr>
 							<tr>
 								<th colspan="4"><center>Callbacks</center></th>
@@ -257,13 +274,38 @@ myInput.simpleBtChecks('destroy');</code></pre>
 			<div class="row">
 				<div class="col-lg-12">
 					<h2>Demos</h2>
+					<p>You can download all these demos and hook into the code from GitHub <a href="https://github.com/joelthorner/simple-bt-checks/tree/master/examples" target="_balnk">here</a>.</p>
 
+					<h3>Default/Sizes</h3>
+					<div class="iframe">
+						<p>
+							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/01-default-sizes.html" target="_blank" class="demo-link-source">Source code</a>
+						</p>
+
+						<iframe src="../examples/01-default-sizes.html" frameborder="0"></iframe>
+					</div>
+
+					<h3>HTML supported performance</h3>
+					<div class="iframe">
+						<p>
+							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/02-performance.html" target="_blank" class="demo-link-source">Source code</a>
+						</p>
+
+						<iframe src="../examples/02-performance.html" frameborder="0"></iframe>
+					</div>
+
+					<h3>Visual options</h3>
+					<div class="iframe">
+						<p>
+							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/03-visual-options.html" target="_blank" class="demo-link-source">Source code</a>
+						</p>
+
+						<iframe src="../examples/03-visual-options.html" frameborder="0"></iframe>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<input type="checkbox">
 
 
 	<!-- jQuery -->
@@ -299,18 +341,7 @@ myInput.simpleBtChecks('destroy');</code></pre>
 				}); 
 			}
 		});
-		// var myInput = $('input[type="checkbox"]').simpleBtChecks({
-		// 	size : 'x-3'
-		// });
 
-		// myInput.on('onInit', function () {
-		//     console.log('slide change start');
-		// });
-		// myInput.simpleBtChecks('destroy');
-
-		// .simpleBtChecks('addListener', $('.iam'))
-
-		// .simpleBtChecks('destroy');
 		$('#year').text(new Date().getFullYear());
 	</script>
 

@@ -1,5 +1,5 @@
 /*!
- * Simple bt checks 2.0
+ * Simple bt checks 2.0.0
  * http://joelthorner.com/plugin/simple-bt-checks
  *
  * Copyright 2016 Joel Thorner - @joelthorner
@@ -49,7 +49,6 @@
 		destroy: function () {
 			var thisData = $(this).data('simpleBtChecks');
 
-
 			// remove HTML
 			thisData.$btn.remove();
 			
@@ -59,12 +58,20 @@
 			// remove events
 			thisData.$element.off('change.bs.sbtc');
 			
-			thisData.$element
-				.siblings(plugin.labelToInput)
-				.off('click.bs.sbtc');
-			thisData.$element
-				.parent().find(plugin.labelToInput)
-				.off('click.bs.sbtc');
+			if(thisData.labelToInput){
+				
+				thisData.$element
+					.siblings(thisData.labelToInput)
+					.off('click.bs.sbtc');
+				
+				thisData.$element
+					.parent().find(thisData.labelToInput)
+					.off('click.bs.sbtc');
+
+				thisData.$element
+					.parent(thisData.labelToInput)
+					.off('click.bs.sbtc');
+			}
 
 			$.each(thisData.aditionalListeners, function(index, val) {
 				val.off('click.bs.sbtc');				
@@ -135,11 +142,19 @@
 					break;
 				
 				case 'all':
-					plugin.$element
-						.add(plugin.$btn)
-						.add(plugin.$element.siblings(plugin.labelToInput))
-						.add(plugin.$element.parent().find(plugin.labelToInput))
-						.wrapAll('<div class="sbtc-container"></div>')
+					var toWrap;
+					if(plugin.labelToInput){
+						toWrap = plugin.$element
+								.add(plugin.$btn)
+								.add(plugin.$element.parent(plugin.labelToInput))
+								.add(plugin.$element.siblings(plugin.labelToInput))
+								.add(plugin.$element.parent().find(plugin.labelToInput));
+
+					}else{
+						toWrap = plugin.$element.add(plugin.$btn);
+					}
+					
+					toWrap.wrapAll('<div class="sbtc-container"></div>');
 					break;
 			}
 		}
@@ -188,21 +203,33 @@
 	function initEvents(){
 
 		plugin.$btn.on('click.bs.sbtc', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
+			// event.preventDefault();
+			// event.stopPropagation();
 			$(this).prev('.sbtc-initialized').click();
 		});
-
+		
 		plugin.$element.parent().find(plugin.labelToInput).on('click.bs.sbtc', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			$(this).find('.sbtc-initialized').click();
+			if(plugin.labelToInput == null){
+				event.preventDefault();
+				event.stopPropagation();
+			}else{
+				$(this).find('.sbtc-initialized').click();
+			}
 		});
 
 		plugin.$element.siblings(plugin.labelToInput).on('click.bs.sbtc', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			$(this).siblings('.sbtc-initialized').click();
+			if(plugin.labelToInput == null){
+				event.preventDefault();
+				event.stopPropagation();
+			}else{
+				$(this).siblings('.sbtc-initialized').click();
+			}
+		});
+
+		plugin.$element.parent(plugin.labelToInput).on('click.bs.sbtc', function(event) {
+			if(plugin.labelToInput != null){
+				$(this).find('.sbtc-initialized').click();
+			}
 		});
 
 		plugin.$element.on('change.bs.sbtc', function(event) {
@@ -231,28 +258,43 @@
 
 			thisData.isChecked = $(this).prop('checked');
 
-			if($.type(thisData.options.afterChange) === 'function'){
-				thisData.options.afterChange.call(self, thisData);
+			if($.type(thisData.options.changeCallback) === 'function'){
+				thisData.options.changeCallback.call(self, thisData);
 			}
 
+		});
+
+		// focus tabs
+		plugin.$element.on('focus.bs.sbtc', function(event) {
+			var thisData = $(this).data('simpleBtChecks'),
+				 self = $(this);
+
+			thisData.$btn.focus();
 		});
 
 	}
 
 	function labelRelOption () {
-		// save input label reference
-		var inputId = plugin.$element.attr('id');
+		if (plugin.options.strictLabel != null) {
 
-		// if not find input label reference and option is true -> set strictLabel to false
-	 	if ($('label[for="'+inputId+'"]').length == 0){
-	 		plugin.options.strictLabel = false;
-	 	}
+			// save input label reference
+			var inputId = plugin.$element.attr('id');
 
-	 	if (plugin.options.strictLabel) {
-	 		plugin.labelToInput = 'label[for="'+plugin.labelToInput+'"]';
-	 	}else{	
-	 		plugin.labelToInput = 'label';
-	 	}
+			// if not find input label reference and option is true -> set strictLabel to false
+		 	if ($('label[for="'+inputId+'"]').length == 0){
+		 		plugin.options.strictLabel = false;
+		 	}
+
+		 	if (plugin.options.strictLabel) {
+		 		plugin.labelToInput = 'label[for="'+plugin.labelToInput+'"]';
+		 	}else{	
+		 		plugin.labelToInput = 'label';
+		 	}
+
+		}
+		else if(plugin.options.strictLabel == null){
+			plugin.labelToInput = null;
+		}
 	}
 
 	function bootstrapUseOption () {

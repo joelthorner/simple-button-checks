@@ -1,18 +1,12 @@
 /*!
- * Simple bt checks 2.0
+ * Simple bt checks 2.0.0
  * http://joelthorner.com/plugin/simple-bt-checks
  *
  * Copyright 2016 Joel Thorner - @joelthorner
  */
 .sbtc-bootstrap {
   padding: 0;
-}
-
-.sbtc-bootstrap .sbtc-icon {
   line-height: 1;
-  display: block;
-  margin-top: -2px;
-  padding-right: 0px;
 }
 
 .sbtc-bootstrap.sbtc-default {
@@ -21,20 +15,12 @@
 
 .sbtc-bootstrap.sbtc-x-2 {
   border-radius: 8px;
-}
-
-.sbtc-bootstrap.sbtc-x-2 .sbtc-icon {
-  margin-top: -2px;
-  padding-right: 1px;
+  padding: 2px;
 }
 
 .sbtc-bootstrap.sbtc-x-3 {
   border-radius: 12px;
-}
-
-.sbtc-bootstrap.sbtc-x-3 .sbtc-icon {
-  margin-top: -1px;
-  padding-right: 3px;
+  padding: 4px;
 }
 
 .sbtc-default {

@@ -33,25 +33,32 @@
 			        flex: 1;
 			text-align: center;
 		}
+		.btn:focus, .btn:active, .btn:active:focus{
+			outline: none;
+		}
+		.btn.btn-custom{
+			color: #FFF;
+			background-color: #B7E20C;
+		}
 	</style>
 </head>
 <body>
 
 	<div class="checkbox" id="ck1">
 		<label>
-			<input type="checkbox" checked> I like big check-box!
+			<input type="checkbox" checked>
 		</label>		
 	</div>
 
 	<div class="checkbox" id="ck2">
 		<label>
-			<input type="checkbox" checked> I like big check-box!
+			<input type="checkbox" checked> Trash
 		</label>		
 	</div>
 
 	<div class="checkbox" id="ck3">
 		<label>
-			<input type="checkbox" checked> I like big check-box!
+			<input type="checkbox" checked>
 		</label>		
 	</div>
 
@@ -64,15 +71,39 @@
 	<script src="../dist/js/simple-bt-checks.js"></script>
 
 	<script>
-		$('#ck1 input[type="checkbox"]').simpleBtChecks();
+		$('#ck1 input[type="checkbox"]').simpleBtChecks({
+			size : "x-3",
+			btnClass: "btn btn-primary",
+			checkedIcon : "glyphicon glyphicon-cog",
+			bootstrapUse : true,
+			wrapContainer : 'all',
+			btnAttributes : {
+				type : "button",
+				style : 'padding: 5px;'
+			},
+			onInit : function (simpleBtChecks) {
+				simpleBtChecks.$btn.tooltip({
+					placement : 'left',
+					title : 'Settings'
+				}); 
+			}
+		});
 
 		$('#ck2 input[type="checkbox"]').simpleBtChecks({
-			size : 'x-2'
+			size : "x-3",
+			btnClass: "btn btn-danger",
+			checkedIcon : "glyphicon glyphicon-trash",
+			bootstrapUse : true,
+			wrapContainer : 'input',
+			btnAttributes : {
+				style : 'padding: 8px 8px 7px 6px;font-size: 30px;'
+			}
 		});
 		
 		$('#ck3 input[type="checkbox"]').simpleBtChecks({
 			size : 'x-3',
-			strictLabel : null
+			strictLabel : null,
+			btnClass: "btn btn-custom"
 		});
 	</script>
 </body>

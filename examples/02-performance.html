@@ -26,33 +26,36 @@
 			    -ms-flex-pack: center;
 			        justify-content: center;
 		}
-		.checkbox{
+		body > div{
 			-webkit-box-flex: 1;
 			-webkit-flex: 1;
 			    -ms-flex: 1;
 			        flex: 1;
 			text-align: center;
 		}
+		label{
+			font-size: 12px;
+			font-weight: normal;
+			color: #666;
+		}
 	</style>
 </head>
 <body>
 
-	<div class="checkbox" id="ck1">
-		<label>
-			<input type="checkbox" checked> I like big check-box!
-		</label>		
+	<div class="checkbox">
+		<label for="i1">
+			<input type="checkbox" checked id="i1"> .checkbox > label > input
+		</label>
 	</div>
 
-	<div class="checkbox" id="ck2">
-		<label>
-			<input type="checkbox" checked> I like big check-box!
-		</label>		
+	<div>
+		<input type="checkbox" checked id="i2">
+		<label for="i2">div > input + label</label>
 	</div>
 
-	<div class="checkbox" id="ck3">
-		<label>
-			<input type="checkbox" checked> I like big check-box!
-		</label>		
+	<div>
+		<label for="i3">div > labbel + input</label>
+		<input type="checkbox" checked id="i3">
 	</div>
 
 
@@ -64,16 +67,7 @@
 	<script src="../dist/js/simple-bt-checks.js"></script>
 
 	<script>
-		$('#ck1 input[type="checkbox"]').simpleBtChecks();
-
-		$('#ck2 input[type="checkbox"]').simpleBtChecks({
-			size : 'x-2'
-		});
-		
-		$('#ck3 input[type="checkbox"]').simpleBtChecks({
-			size : 'x-3',
-			strictLabel : null
-		});
+		$('input[type="checkbox"]').simpleBtChecks();
 	</script>
 </body>
 </html>

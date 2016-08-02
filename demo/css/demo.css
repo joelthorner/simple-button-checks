@@ -1,12 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
-body{font-family: 'Open Sans', sans-serif;padding-top:54px;}
+body{font-family: 'Open Sans', sans-serif;padding-top:54px;margin-bottom: 54px;}
 .navbar-default{background-color:#464030;border-color:#E2F224;border-bottom-width:4px}
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{color:#FFF;transition:color 350ms ease}
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{color:#E2F224}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{color:#FFF;background-color: #635F45}
 .title{display: inline-block;}
+#intro p{font-size: 14px;color: #635F45;margin: 15px 0 0 0;}
 .title p{margin-bottom: 0;color: #FFF;}
-h1{font-weight: bold;color: #FFF;margin-bottom: 0;}
+h1{font-weight: bold;color: #FFF;margin-bottom: 0;	text-shadow: 2px 2px 0px #b5cf00;}
 h2, .h2{color:#464030;font-size:26px}
 .h3, h3{font-size:20px}
 .h3, h3, .h4, h4{color:#635F45}
@@ -55,4 +56,11 @@ th[colspan="4"]{background:#eee}
 .sbtc-btn.superbig-2 .sbtc-icon{	font-size: 52px;margin: 0;padding: 0 3px 0 0;}
 .sbtc-btn.superbig-3 {height: 50px;width: 50px;border-radius: 10px;outline:none !important;}
 .sbtc-btn.superbig-3 .sbtc-icon{font-size: 35px;margin: 0;padding: 0;}
-
+.demo-link-source{position: relative;margin-right: 20px;text-decoration: none;padding-right: 15px;}
+.demo-link-source:before{width: 4px;height: 4px;border-right: 1px solid #B7E20C;border-top: 1px solid #B7E20C;content: '';right: 3px;top: 50%;margin-top: -2px;position: absolute;}
+.demo-link-source:after {content: '';position: absolute;width: 10px;height: 10px;border-radius: 2px;border: 1px solid #B7E20C;right: 0;top: 50%;margin-top: -5px;}
+.iframe iframe{height: 180px;width: 100%;border: 1px solid #ddd; } 
+section a{	color: #B7E20C;border-bottom: 1px solid #B7C09B;}
+section a:focus, a:hover {color: #635F45;text-decoration: none;border-bottom-color: #464030;}
+section a, .demo-link-source:before, .demo-link-source:after{transition: all 300ms ease-in-out;}
+.demo-link-source:hover:before, .demo-link-source:hover:after{border-color: #635F45;}
