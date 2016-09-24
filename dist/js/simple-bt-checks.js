@@ -1,5 +1,5 @@
 /*!
- * Simple bt checks 2.0.0
+ * Simple bt checks 2.0.1
  * http://joelthorner.com/plugin/simple-bt-checks
  *
  * Copyright 2016 Joel Thorner - @joelthorner
@@ -30,7 +30,9 @@
 			// <label for="country"></label> <input id="country" type="checkbox">
 			strictLabel : true,
 
-			btnAttributes : {},
+			btnAttributes : {
+				'type' : 'button'
+			},
 
 			onInit : null,
 			onChange : null,

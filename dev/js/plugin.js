@@ -24,7 +24,9 @@
 			// <label for="country"></label> <input id="country" type="checkbox">
 			strictLabel : true,
 
-			btnAttributes : {},
+			btnAttributes : {
+				'type' : 'button'
+			},
 
 			onInit : null,
 			onChange : null,
