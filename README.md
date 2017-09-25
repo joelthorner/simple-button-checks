@@ -5,7 +5,7 @@ Simple-bt-checks
 Transform checkbox inputs to [Bootstrap](http://getbootstrap.com/css/#buttons) HTML buttons
 
 ## Demos / Documentation
-Demo & doc : [joelthorner.com](http://joelthorner.com/plugin/simple-bt-checks)
+Demo & doc : [joelthorner.com](http://joelthorner.github.io/simple-bt-checks/)
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ Demo & doc : [joelthorner.com](http://joelthorner.com/plugin/simple-bt-checks)
 </head>
 <body>
    ...
-   <script src="path/to/jquery2/3.x.x.min.js"></script>
+   <script src="path/to/jquery3.x.x.min.js"></script>
    <script src="path/to/bootstrap3.x.x.min.js"></script><!-- optional framework -->
    <script src="path/to/simple-bt-checks.min.js"></script>
 </body>
@@ -48,4 +48,4 @@ $('input[type="checkbox"]').simpleBtChecks();
 ```
 
 ## Options and Methods
-Options and Methods : [joelthorner.com](http://joelthorner.com/plugin/simple-bt-checks)
+Options and Methods : [joelthorner.com](http://joelthorner.github.io/simple-bt-checks/)
