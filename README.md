@@ -5,7 +5,11 @@ Transform checkbox inputs to [Bootstrap 3x](http://getbootstrap.com/css/#buttons
 
 
 ## Demos / Documentation
+<<<<<<< HEAD
 Demo and doc : [http://joelthorner.github.io/simple-bt-checks](http://joelthorner.github.io/simple-bt-checks/)
+=======
+Demo & doc : [joelthorner.com](http://joelthorner.github.io/simple-bt-checks/)
+>>>>>>> origin/master
 
 ## Getting Started
 
@@ -48,6 +52,7 @@ $('input[type="checkbox"]').simpleBtChecks();
 ```
 
 ## Options and Methods
+<<<<<<< HEAD
 Options and Methods : [http://joelthorner.github.io/simple-bt-checks](http://joelthorner.github.io/simple-bt-checks/)
 
 
@@ -55,3 +60,6 @@ Options and Methods : [http://joelthorner.github.io/simple-bt-checks](http://joe
 
 - [ ] Bootstrap 4 support or version
 - [ ] Svg icon support &lt;svg&gt; and &lt;use&gt;
+=======
+Options and Methods : [joelthorner.com](http://joelthorner.github.io/simple-bt-checks/)
+>>>>>>> origin/master
