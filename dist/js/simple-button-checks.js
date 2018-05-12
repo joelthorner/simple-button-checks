@@ -1,21 +1,25 @@
+/*!
+ * Simple button checks 3.0.0
+ * http://joelthorner.github.io/simple-button-checks/
+ *
+ * Copyright 2018 Joel Thorner - @joelthorner
+ */
 !function ($) {
 
 	"use strict";
 
 	var plugin;
 
-	var SimpleBtChecks = function (el, options) {
+	var SimpleButtonChecks = function (el, options) {
 
 		plugin = this;
 
 		this.$element = $(el);
 
 		var defaults = {
-			size : "default",
-			btnClass: "btn btn-default",
-			checkedIcon : "glyphicon glyphicon-ok",
-
-			bootstrapUse : true,
+			buttonClass: "sbc-default",
+			checkedIcon : "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/></svg>",
+			nonCheckedIcon : '',
 
 			// 'none' or 'input' or 'all'
 			wrapContainer : 'none', 
@@ -40,37 +44,37 @@
 	};
 
 	// public methods
-	SimpleBtChecks.prototype = {
+	SimpleButtonChecks.prototype = {
 
 		destroy: function () {
-			var thisData = $(this).data('simpleBtChecks');
+			var thisData = $(this).data('simpleButtonChecks');
 
 			// remove HTML
 			thisData.$btn.remove();
 			
 			// remove classes
-			thisData.$element.removeClass('sbtc-initialized');
+			thisData.$element.removeClass('sbc-init');
 			
 			// remove events
-			thisData.$element.off('change.bs.sbtc');
+			thisData.$element.off('change.sbc');
 			
 			if(thisData.labelToInput){
 				
 				thisData.$element
 					.siblings(thisData.labelToInput)
-					.off('click.bs.sbtc');
+					.off('click.sbc');
 				
 				thisData.$element
 					.parent().find(thisData.labelToInput)
-					.off('click.bs.sbtc');
+					.off('click.sbc');
 
 				thisData.$element
 					.parent(thisData.labelToInput)
-					.off('click.bs.sbtc');
+					.off('click.sbc');
 			}
 
 			$.each(thisData.aditionalListeners, function(index, val) {
-				val.off('click.bs.sbtc');				
+				val.off('click.sbc');				
 			});
 			
 			// callback
@@ -79,18 +83,18 @@
 			}
 
 			// remove data
-			thisData.$element.removeData('simpleBtChecks');
+			thisData.$element.removeData('simpleButtonChecks');
 		},
 
 		addListener : function (newNode) {
-			var thisData = $(this).data('simpleBtChecks'),
+			var thisData = $(this).data('simpleButtonChecks'),
 				 _self = $(this);
 
  			if ($.type(newNode) === 'object' && thisData) {
 
  				thisData.aditionalListeners.push(newNode);
 
- 				newNode.on('click.bs.sbtc', function(event) {
+ 				newNode.on('click.sbc', function(event) {
 					_self.click();
 				});
  			}
@@ -105,9 +109,6 @@
 		
 		// label strict/nostrict mode
 		labelRelOption();
-
-		// bootstrap if not used changes
-		bootstrapUseOption();
 
 		// real init new html system
 		initHTML();
@@ -134,7 +135,7 @@
 				case 'input':
 					plugin.$element
 						.add(plugin.$btn)
-						.wrapAll('<div class="sbtc-container"></div>')
+						.wrapAll('<div class="sbc-container"></div>')
 					break;
 				
 				case 'all':
@@ -150,7 +151,7 @@
 						toWrap = plugin.$element.add(plugin.$btn);
 					}
 					
-					toWrap.wrapAll('<div class="sbtc-container"></div>');
+					toWrap.wrapAll('<div class="sbc-container"></div>');
 					break;
 			}
 		}
@@ -158,8 +159,8 @@
 	}
 
 	function initHTML() {
-		// add initialized original input class
-		plugin.$element.addClass('sbtc-initialized');
+		// add init original input class
+		plugin.$element.addClass('sbc-init');
 
 		// checked check
 		var isAlreadyChecked = false;
@@ -172,12 +173,15 @@
 		plugin.isChecked = isAlreadyChecked;
 
 		// create btn
-		plugin.uuid = guid();
+		if (plugin.$element.attr('id').length) {
+			plugin.uuid = plugin.$element.attr('id') + '_sbc';
+		}else{
+			plugin.uuid = guid();
+		}
 
-		var btnClasses = 'sbtc-btn ' + plugin.options.btnClass + 
-			' sbtc-' + plugin.options.size + ((isAlreadyChecked) ? ' sbtc-checked': ' sbtc-no-checked');
+		var btnClasses = 'sbc-btn ' + plugin.options.buttonClass + ((isAlreadyChecked) ? ' sbc-checked': ' sbc-no-checked');
 
-		var btnHtml = '<span class="sbtc-icon ' + ((isAlreadyChecked) ? plugin.options.checkedIcon : '') + '"></span>';
+		var btnHtml = isAlreadyChecked ? plugin.options.checkedIcon : plugin.options.nonCheckedIcon;
 
 		var btn = $('<button/>', {
 			'id' : plugin.uuid,
@@ -198,39 +202,38 @@
 
 	function initEvents(){
 
-		plugin.$btn.on('click.bs.sbtc', function(event) {
-			// event.preventDefault();
-			// event.stopPropagation();
-			$(this).prev('.sbtc-initialized').click();
+		plugin.$btn.on('click.sbc', function(event) {
+			$(this).prev('.sbc-init').click();
 		});
 		
-		plugin.$element.parent().find(plugin.labelToInput).on('click.bs.sbtc', function(event) {
+		plugin.$element.parent().find(plugin.labelToInput).on('click.sbc', function(event) {
 			if(plugin.labelToInput == null){
 				event.preventDefault();
 				event.stopPropagation();
 			}else{
-				$(this).find('.sbtc-initialized').click();
+				$(this).find('.sbc-init').click();
 			}
 		});
 
-		plugin.$element.siblings(plugin.labelToInput).on('click.bs.sbtc', function(event) {
+		plugin.$element.siblings(plugin.labelToInput).on('click.sbc', function(event) {
 			if(plugin.labelToInput == null){
 				event.preventDefault();
 				event.stopPropagation();
 			}else{
-				$(this).siblings('.sbtc-initialized').click();
+				$(this).siblings('.sbc-init').click();
 			}
 		});
 
-		plugin.$element.parent(plugin.labelToInput).on('click.bs.sbtc', function(event) {
+		plugin.$element.parent(plugin.labelToInput).on('click.sbc', function(event) {
 			if(plugin.labelToInput != null){
-				$(this).find('.sbtc-initialized').click();
+				// this call 3 times for click and is an error
+				// $(this).find('.sbc-init').click();
 			}
 		});
 
-		plugin.$element.on('change.bs.sbtc', function(event) {
+		plugin.$element.on('change.sbc', function(event) {
 
-			var thisData = $(this).data('simpleBtChecks'),
+			var thisData = $(this).data('simpleButtonChecks'),
 				 self = $(this);
 
 			if($.type(thisData.options.onChange) === 'function'){
@@ -239,17 +242,15 @@
 			
 			if (thisData.isChecked) {
 				thisData.$btn
-					.removeClass('sbtc-checked')
-					.addClass('sbtc-no-checked')
-					.find('.sbtc-icon')
-					.removeClass(thisData.options.checkedIcon);
+					.removeClass('sbc-checked')
+					.addClass('sbc-no-checked')
+					.html(thisData.options.nonCheckedIcon);
 
 			}else{
 				thisData.$btn
-					.removeClass('sbtc-no-checked')
-					.addClass('sbtc-checked')
-					.find('.sbtc-icon')
-					.addClass(thisData.options.checkedIcon);
+					.removeClass('sbc-no-checked')
+					.addClass('sbc-checked')
+					.html(thisData.options.checkedIcon);
 			}
 
 			thisData.isChecked = $(this).prop('checked');
@@ -261,8 +262,8 @@
 		});
 
 		// focus tabs
-		plugin.$element.on('focus.bs.sbtc', function(event) {
-			var thisData = $(this).data('simpleBtChecks'),
+		plugin.$element.on('focus.sbc', function(event) {
+			var thisData = $(this).data('simpleButtonChecks'),
 				 self = $(this);
 
 			thisData.$btn.focus();
@@ -293,23 +294,6 @@
 		}
 	}
 
-	function bootstrapUseOption () {
-		// if not use bootstrap change default class btn btn-default
-		// 	and glyphicon icon
-	 	if (plugin.options.bootstrapUse === false) {
-		
-			// if(plugin.options.btnClass === plugin.defaults.btnClass)
-			plugin.options.btnClass = plugin.options.btnClass + ' sbtc-no-bt';
-
-			// if(plugin.options.checkedIcon === plugin.defaults.checkedIcon)
-			plugin.options.checkedIcon = plugin.options.checkedIcon + ' sbtc-checked-icon';
-		
-		}else{
-			
-			plugin.options.btnClass = plugin.options.btnClass + ' sbtc-bootstrap';
-		}
-	}
-
 	// http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 	function guid() {
 		
@@ -317,11 +301,11 @@
 			return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 		}
 		
-		return 'sbtc-' + s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4();
+		return 'sbc-' + s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4();
 	}
 
 
-	$.fn.simpleBtChecks = function (options) {
+	$.fn.simpleButtonChecks = function (options) {
 
 		var args = Array.prototype.slice.call(arguments);
 		args.shift();
@@ -329,11 +313,11 @@
 		return this.each(function () {
 
 			var $element = $(this);
-			var data = $element.data("simpleBtChecks");
+			var data = $element.data("simpleButtonChecks");
 
 
 			if (!data && $element.is('input[type="checkbox"]')){
-				$element.data("simpleBtChecks", (data = new SimpleBtChecks(this, options)));
+				$element.data("simpleButtonChecks", (data = new SimpleButtonChecks(this, options)));
 			}
 
 			if (typeof options == 'string') data[options].apply(this, args);
@@ -341,6 +325,6 @@
 		})
 	};
 
-	$.fn.simpleBtChecks.Constructor = SimpleBtChecks;
+	$.fn.simpleButtonChecks.Constructor = SimpleButtonChecks;
 
 }(window.jQuery);
