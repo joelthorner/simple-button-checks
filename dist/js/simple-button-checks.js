@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.0
+ * Simple button checks 3.0.1
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -18,7 +18,7 @@
 
 		var defaults = {
 			buttonClass: "sbc-default",
-			checkedIcon : "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/></svg>",
+			checkedIcon : '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>',
 			nonCheckedIcon : '',
 
 			// 'none' or 'input' or 'all'
@@ -173,7 +173,8 @@
 		plugin.isChecked = isAlreadyChecked;
 
 		// create btn
-		if (plugin.$element.attr('id').length) {
+		var thisId = plugin.$element.attr('id');
+		if ($.type(thisId) != 'undefined' && thisId.length) {
 			plugin.uuid = plugin.$element.attr('id') + '_sbc';
 		}else{
 			plugin.uuid = guid();
