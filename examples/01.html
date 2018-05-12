@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="../demo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../dist/css/simple-button-checks.css">
+	
+	<style>
+		html, body{
+			height: 100%;
+		}
+		body{
+			background-color: #f8f9fa;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+		.checkbox {
+			width: 100%;
+			padding: 15px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+		.checkbox-1 label{
+			margin: 0;
+			font-size: 13px;
+			margin-left: 10px;
+		}
+		.checkbox-1 .sbc-btn{
+			width: 20px;
+			height: 20px;
+		}
+		.checkbox-1 .sbc-btn.sbc-checked{
+			background-color: #343a40;
+		}
+		.checkbox-1 svg{
+			width: 14px;
+			height: 14px;
+		}
+		.checkbox-1 svg path {
+			stroke: #fff;
+			stroke-width: 4px;
+			fill: none;
+		}
+		.checkbox-2 .sbc-btn{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+		.checkbox-2 label{
+			margin-left: 15px;
+			margin-bottom: 0;
+			width: 150px;
+			font-size: 12px;
+			font-weight: 500;
+		}
+		.checkbox-2 svg{
+			height: 32px;
+			width: 32px;
+			-webkit-transform: translateY(-2px);
+			transform: translateY(-2px);
+		}
+		.checkbox-2 .sbc-btn.sbc-checked{
+			background-color: #0099da;
+		}
+		.checkbox-2 .sbc-btn.sbc-checked svg{
+			fill: #FFF;
+		}
+	</style>
+
+	<title>Simple Button Checks - 01</title>
+</head>
+<body class="example">
+
+	<div class="checkbox checkbox-1">
+		<input type="checkbox" name="example1" id="example1">
+		<label for="example1">I have read and accept the <a href="#">Privacy policy</a> and the <a href="#">Terms of use</a></label>
+	</div>
+
+	<div class="checkbox checkbox-2">
+		<input type="checkbox" name="example2" id="example2">
+		<label for="example2">I have read and accept the <a href="#">Privacy policy</a> and the <a href="#">Terms of use</a></label>
+	</div>
+
+	<script src="../demo/js/jquery-3.3.1.min.js"></script>
+	<script src="../demo/js/popper.min.js"></script>
+	<script src="../demo/js/bootstrap.min.js"></script>
+	<script src="../dist/js/simple-button-checks.js"></script>
+	<script src="https://cdn.jsdelivr.net/kute.js/1.6.2/kute.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/kute.js/1.6.2/kute-svg.min.js"></script>
+	
+	<!-- example js -->
+	<script>
+
+		$(document).ready(function() {
+			// example1
+			$('#example1').simpleButtonChecks({
+				checkedIcon : '<svg class="ok-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-80.484 637.521 56.693 56.693"><path fill="none" stroke="#000" stroke-width="4" stroke-miterlimit="10" d="M-78.719 666.695l18.229 18.229 34.936-34.936"/></svg>',
+				btnAttributes : {
+					'type' : 'button',
+					'data-toggle' : 'popover',
+					'data-content' : "And here's some amazing content. It's very engaging. Right?",
+					'title' : "Hellouda!"
+				},
+				changeCallback : function(sbc) {
+					if(sbc.isChecked){
+						var example1Animate = KUTE.fromTo(
+							'.ok-svg path', 
+							{ draw: "0% 0%" },
+							{ draw: "0% 100%" },
+							{ duration: 350 }
+						);
+						example1Animate.start();
+					}
+				}	
+			});
+
+			$('.sbc-btn').popover({
+				container: 'body',
+				trigger: 'focus'
+			});
+
+			// example 2
+			$('#example2').simpleButtonChecks({
+				checkedIcon : '<svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg>',
+				changeCallback : function(sbc) {
+					if(sbc.isChecked){
+						var example1Animate = KUTE.fromTo(
+							'.ok-svg path', 
+							{ draw: "0% 0%" },
+							{ draw: "0% 100%" },
+							{ duration: 350 }
+						);
+						example1Animate.start();
+					}
+				}	
+			});
+		});
+	</script>
+</body>
+</html>

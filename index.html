@@ -1,355 +1,333 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Simple bt checks is a plugin for transform HTML checkbox to cool HTML button with bootstrap.">
-	<meta name="author" content="Joel Thorner">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Simple button checks is a plugin for transform HTML checkbox to cool HTML button with bootstrap.">
 
-	<title>Simple bt checks - JoelThorner</title>
-	<link rel="icon" type="image/png" href="demo/img/icon.png">
-
-
-	<!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
-	<!-- Library CSS -->
-	<link rel="stylesheet" href="dist/css/simple-bt-checks.css">
-
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+	<link rel="stylesheet" href="demo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="dist/css/simple-button-checks.css">
 	<link rel="stylesheet" href="demo/css/demo.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="demo/img/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="demo/img/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="demo/img/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="demo/img/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="demo/img/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="demo/img/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="demo/img/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="demo/img/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="demo/img/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="demo/img/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="demo/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="demo/img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="demo/img/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#343a40">
+	<meta name="msapplication-TileImage" content="demo/img/ms-icon-144x144.png">
+	<meta name="theme-color" content="#343a40">
+
+	<title>Simple button checks</title>
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-	<!-- Navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand page-scroll" href="http://joelthorner.github.io/simple-bt-checks/">Simple Bt Checks</a>
-			</div>
-
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li>
-						<a class="page-scroll" href="#get-started">Get started</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#api">API</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#demos">Demos</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
+<body>
+	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.1</span></a>
+		
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="https://github.com/joelthorner/simple-button-checks" target="_blank">Github <svg class="icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a>
+			</li>
+		</ul>
 	</nav>
 
-	<div id="banner">
-		<div class="container">
-			<input type="checkbox" id="c1" checked>
-			<input type="checkbox" id="c2" checked>
-			<input type="checkbox" id="c3" checked>
-			<div class="title">
-				<h1>Simple Bt Checks</h1>
-			</div>
-		</div>
-	</div>
-	<div id="banner-bottom">
-		<div class="container">
-			<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download joelthorner/simple-bt-checks on GitHub">Download</a>
-			<a class="github-button" href="https://github.com/joelthorner/simple-bt-checks/issues" data-icon="octicon-issue-opened" data-count-api="/repos/joelthorner/simple-bt-checks#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue joelthorner/simple-bt-checks on GitHub">Issue</a>
-			<a class="github-button" href="https://github.com/joelthorner" aria-label="Follow @joelthorner on GitHub">Follow @joelthorner</a>
-		</div>
-	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#getting-started">
+								Getting started <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#options">
+								Options
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#callbacks">
+								Callbacks
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#methods">
+								Methods
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#demo">
+								Demo
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
-	<section id="intro">
-		<div class="container">
-			<p>Simple bt checks is a simple plugin for transform checkbox inputs to html buttons for css customize. High performance, keyboard support and preserve original input click/change events.</p>
-		</div>
-	</section>
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h1 class="h1">Simple Bt Checks</h1>
+					<div class="btn-toolbar mb-2 mb-md-0">
+						<div class="btn-group mr-2">
+							<a class="github-button" href="https://github.com/joelthorner/simple-button-checks/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue joelthorner/simple-button-checks on GitHub">Issue</a>
+							&nbsp;
+							&nbsp;
+							<a class="github-button" href="https://github.com/joelthorner/simple-button-checks" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star joelthorner/simple-button-checks on GitHub">Star</a>
+							&nbsp;
+							&nbsp;
+							<a class="github-button" href="https://github.com/joelthorner/simple-button-checks/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download joelthorner/simple-button-checks on GitHub">Download</a>
+						</div>
+					</div>
+				</div>
+				<p>Simple button checks is a simple plugin for transform checkbox inputs to html buttons for css customize. High performance, keyboard support and preserve original input click/change events.</p>
 
-	<section id="get-started">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>Getting started</h2>
-					<h3>1. Include Simple bt checks files to website/app</h3>
-					<p>After that we need to include CSS and JS files to our website/app. In your html file:</p>
-					<p>Optionaly we can use <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
-<pre><code class="html xml">&lt;!DOCTYPE html&gt;
+				<br>
+				<h2 id="getting-started">Getting started</h2>
+				<br>
+				<h3 class="h5">1. Include Simple bt checks files to website/app</h3>
+
+				<p>After that we need to include CSS and JS files to our website/app. In your html file:</p>
+<div class="editor-wrp">
+<div class="editor html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-&lt;head&gt;
-   ...
-   &lt;link rel="stylesheet" href="path/to/bootstrap3.x.x.min.css"&gt;&lt;!-- optional framework --&gt;
-   &lt;link rel="stylesheet" href="path/to/simple-bt-checks.min.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-   ...
-   &lt;script src="path/to/jquery2/3.x.x.min.js"&gt;&lt;/script&gt;
-   &lt;script src="path/to/bootstrap3.x.x.min.js"&gt;&lt;/script&gt;&lt;!-- optional framework --&gt;
-   &lt;script src="path/to/simple-bt-checks.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-					
-					<h3>2. Add HTML inputs</h3>
-					<p>This plugin contemplates several label-input formats:</p>
-<pre><code class="html xml">&lt;!-- sibiling label-input --&gt;
-&lt;div class="checkbox"&gt;
-   &lt;input type="checkbox" name="aValue" id="a" value="344"&gt;
-   &lt;label for="a"&gt;Address&lt;/label&gt;
+	&lt;head&gt;
+		&lt;link rel="stylesheet" href="path/to/simple-button-checks.css"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+
+		&lt;script src="path/to/jquery/3.x.x.min.js"&gt;&lt;/script&gt;
+		&lt;script src="path/to/simple-button-checks.js"&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+</div>
+				<br>
+				<h3 class="h5">2. Add html inputs</h3>
+				<p>This plugin contemplates several label-input formats:</p>
+<div class="editor-wrp">
+<div class="editor html">&lt;div class="checkbox"&gt;
+   &lt;input type="checkbox" name="example1" id="example1" value="344"&gt;
+   &lt;label for="example1"&gt;Address&lt;/label&gt;
 &lt;/div&gt;
 
+&lt;!-- or --&gt;
+
 &lt;div class="checkbox"&gt;
-   &lt;label for="b"&gt;Address&lt;/label&gt;
-   &lt;input type="checkbox" name="bValue" id="b" value="1"&gt;
+   &lt;label for="example2"&gt;Address&lt;/label&gt;
+   &lt;input type="checkbox" name="example2" id="example2" value="344"&gt;
 &lt;/div&gt;
-
-&lt;!-- Bootstrap recomended --&gt;
-&lt;div class="checkbox"&gt;
-   &lt;label&gt;
-      &lt;input type="checkbox" checked="checked"&gt; Check me out
-   &lt;/label&gt;
-&lt;/div&gt;</code></pre>
-
-					<h3>3. Initialize plugin</h3>
-					<p>After load jquery and simple-bt-checks js files</p>
-<pre><code class="js">$(document).ready(function () {
+</div>
+</div>
+				<br>
+				<h3 class="h5">3. Initialize plugin</h3>
+				<p>After load jquery and simple-button-checks js files</p>
+<div class="editor-wrp">
+<div class="editor js">$(document).ready(function () {
    // initialize plugin when document ready  
-   $('input[type="checkbox"]').simpleBtChecks({
+   $('input[type="checkbox"]').simpleButtonChecks({
       size : "default",
       btnClass: "btn btn-default",
       checkedIcon : "glyphicon glyphicon-ok"
    });
-});</code></pre>
+});</div>
+</div>
+
+				<br>
+				<br>
+				<h2 id="options">Options</h2>
+				<br>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Parameter</th>
+								<th>Type</th>
+								<th>Default</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>buttonClass</code></td>
+								<td><code>string</code></td>
+								<td><code>'btn btn-default'</code></td>
+								<td>Class attribute value for new html button tag</td>
+							</tr>
+							<tr>
+								<td><code>checkedIcon</code></td>
+								<td><code>string</code></td>
+								<td><code style="width: 290px;display: block;">'&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'&gt;&lt;path d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/&gt;&lt;/svg&gt;'</code></td>
+								<td>button inner html when input is checked</td>
+							</tr>
+							<tr>
+								<td><code>nonCheckedIcon</code></td>
+								<td><code>string</code></td>
+								<td><code>''</code></td>
+								<td>button inner html when input is not checked</td>
+							</tr>
+							<tr>
+								<td><code>wrapContainer</code></td>
+								<td><code>string</code></td>
+								<td><code>'none'</code></td>
+								<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
+							</tr>
+							<tr>
+								<td><code>strictLabel</code></td>
+								<td><code>boolean|null</code></td>
+								<td><code>true</code></td>
+								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
+							</tr>
+							<tr>
+								<td><code>btnAttributes</code></td>
+								<td><code>object</code></td>
+								<td><code>{ type : 'button' }</code></td>
+								<td>
+									Add attribute name - value into new html button. Example:<br>
+									<code>btnAttributes: {<br>
+									&nbsp;&nbsp;data-title : 'string value'<br>
+									}</code>
+								</td>
+							</tr>
+						</body>
+					</table>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="api">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>Api</h2>
-					<h3>Parameters</h3>
-					<p>List of all available parameters:</p>
-					<div class="table-responsive">
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Parameter</th>
-									<th>Type</th>
-									<th>Default</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><code>size</code></td>
-									<td><code>string</code></td>
-									<td><code>'default'</code></td>
-									<td>Could be "default", "x-2" or "x-3"</td>
-								</tr>
-								<tr>
-									<td><code>btnClass</code></td>
-									<td><code>string</code></td>
-									<td><code>'btn btn-default'</code></td>
-									<td>Class attribute value for new html button tag</td>
-								</tr>
-								<tr>
-									<td><code>checkedIcon</code></td>
-									<td><code>string</code></td>
-									<td><code>'glyphicon glyphicon-ok'</code></td>
-									<td>icon font class (or other class)</td>
-								</tr>
-								<tr>
-									<td><code>bootstrapUse</code></td>
-									<td><code>boolean</code></td>
-									<td><code>true</code></td>
-									<td>If not use Bootstrap framework set to false</td>
-								</tr>
-								<tr>
-									<td><code>wrapContainer</code></td>
-									<td><code>string</code></td>
-									<td><code>'none'</code></td>
-									<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
-								</tr>
-								<tr>
-									<td><code>strictLabel</code></td>
-									<td><code>boolean|null</code></td>
-									<td><code>true</code></td>
-									<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
-								</tr>
-								<tr>
-									<td><code>btnAttributes</code></td>
-									<td><code>object</code></td>
-									<td><code>{ type : 'button' }</code></td>
-									<td>
-										Add attribute name - value into new html button. Example:
-<pre><code class="js">btnAttributes: {
-   title : 'string value'
-}</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<th colspan="4"><center>Callbacks</center></th>
-								</tr>
-								<tr>
-									<td><code>onInit(simpleBtChecks)</code></td>
-									<td><code>function</code></td>
-									<td><code>null</code></td>
-									<td>Callback function, will be executed right after plugin initialization</td>
-								</tr>
-								<tr>
-									<td><code>onChange(simpleBtChecks)</code></td>
-									<td><code>function</code></td>
-									<td><code>null</code></td>
-									<td>Function, will be executed right before checkbox input change</td>
-								</tr>
-								<tr>
-									<td><code>changeCallback(simpleBtChecks)</code></td>
-									<td><code>function</code></td>
-									<td><code>null</code></td>
-									<td>Callback function, will be executed right after checkbox input change</td>
-								</tr>
-								<tr>
-									<td><code>onDestroy(simpleBtChecks)</code></td>
-									<td><code>function</code></td>
-									<td><code>null</code></td>
-									<td>Callback function, will be executed when you destroy Swiper</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<h3>Methods</h3>
-					<p>After we initialize input/s we have its initialized instance in variable (like myInput variable in example below) with helpful methods:</p>
-<pre><code class="js">var myInput = $('input[type="checkbox"]').simpleBtChecks({
-   size : 'x-3'
+				<br>
+				<h2 id="callbacks">Callbacks</h2>
+				<br>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Parameter</th>
+								<th>Type</th>
+								<th>Default</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<body>
+							<tr>
+								<td><code>onInit(simpleButtonChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed right after plugin initialization</td>
+							</tr>
+							<tr>
+								<td><code>onChange(simpleButtonChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Function, will be executed right before checkbox input change</td>
+							</tr>
+							<tr>
+								<td><code>changeCallback(simpleButtonChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed right after checkbox input change</td>
+							</tr>
+							<tr>
+								<td><code>onDestroy(simpleButtonChecks)</code></td>
+								<td><code>function</code></td>
+								<td><code>null</code></td>
+								<td>Callback function, will be executed when you destroy Swiper</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<h2 id="methods">Methods</h2>
+				<br>
+				<p>After we initialize input/s we have its initialized instance in variable (like myInput variable in example below) with helpful methods:</p>
+<div class="editor-wrp">
+<div class="editor js">var myInput = $('#check-1').simpleButtonChecks({
+   checkedIcon : '&#x3C;span class=&#x22;custom-icon&#x22;&#x3E;&#x3C;/span&#x3E;'
 });
 
-myInput.simpleBtChecks('destroy');</code></pre>
-					<div class="table-responsive">
-						<table class="table table-bordered" id="t_methods">
-							<thead>
-								<tr>
-									<th>Method</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>myInput.simpleBtChecks(<span>'destroy'</span>);</td>
-									<td>Destroy simpleBtCheck instance and detach all events listeners</td>
-								</tr>
-								<tr>
-									<td>myInput.simpleBtChecks(<span>'addListener'</span>, <span>node</span>);</td>
-									<td>
-										Add change checkbox input event to a node. Example:
-<pre><code class="js">myInput.simpleBtChecks('addListener', $('#div-1'));</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
+myInput.simpleButtonChecks('destroy');</div>
+</div>
+				<br>
+				<div class="table-responsive">
+					<table class="table table-bordered" id="t_methods">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>myInput.simpleButtonChecks(<span>'destroy'</span>);</td>
+								<td>Destroy simpleButtonChecks instance and detach all events listeners</td>
+							</tr>
+							<tr>
+								<td>myInput.simpleButtonChecks(<span>'addListener'</span>, <span>node</span>);</td>
+								<td>
+									Add change checkbox input event to a node. Example:<br>
+									<code>myInput.simpleButtonChecks('addListener', $('#div-1'));</code>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-			</div>
+				<br>
+				<h2 id="demo">Demo</h2>
+				<p>Fully customizable!</p>
+				
+				<iframe class="demo" src="examples/01.html" frameborder="0"></iframe>
+
+				<br>
+				<br>
+				<br>
+			</main>
 		</div>
-	</section>
+	</div>
 
-	<section id="demos">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>Demos</h2>
-					<p>You can download all these demos and hook into the code from GitHub <a href="https://github.com/joelthorner/simple-bt-checks/tree/master/examples" target="_balnk">here</a>.</p>
-
-					<h3>Default/Sizes</h3>
-					<div class="iframe">
-						<p>
-							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/01-default-sizes.html" target="_blank" class="demo-link-source">Source code</a>
-						</p>
-
-						<iframe src="examples/01-default-sizes.html" frameborder="0"></iframe>
-					</div>
-
-					<h3>HTML supported performance</h3>
-					<div class="iframe">
-						<p>
-							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/02-performance.html" target="_blank" class="demo-link-source">Source code</a>
-						</p>
-
-						<iframe src="examples/02-performance.html" frameborder="0"></iframe>
-					</div>
-
-					<h3>Visual options</h3>
-					<div class="iframe">
-						<p>
-							<a href="https://github.com/joelthorner/simple-bt-checks/blob/master/examples/03-visual-options.html" target="_blank" class="demo-link-source">Source code</a>
-						</p>
-
-						<iframe src="examples/03-visual-options.html" frameborder="0"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-	<!-- Bootstrap js -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	
-	<script src="dist/js/simple-bt-checks.js"></script>
-	<script src="demo/js/highlight.pack.js"></script>
+	<script src="demo/js/jquery-3.3.1.min.js"></script>
+	<script src="demo/js/popper.min.js"></script>
+	<script src="demo/js/bootstrap.min.js"></script>
+	<script src="dist/js/simple-button-checks.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js" integrity="sha256-NLPE2EQpOtxTAUB/jxjM97jsGmVQopiX8ceHySHhXs8=" crossorigin="anonymous"></script>
 
 	<script>
-		hljs.initHighlightingOnLoad();
-		$('#c1').simpleBtChecks({btnClass : 'superbig-1 btn btn-default'});
-		$('#c2').simpleBtChecks({btnClass : 'superbig-2 btn btn-default'});
-		
-		$('#c3').simpleBtChecks({
-			btnClass : 'superbig-3 btn btn-default',
-			btnAttributes : {
-				'data-toggle' : "tooltip",
-				'data-placement' : "top"
-			},
-			onInit : function (simpleBtChecks) {
-				simpleBtChecks.$btn.tooltip({
-					trigger : 'hover',
-					title : function () {
-						if ($(this).hasClass('sbtc-checked')) {
-							return 'Checked :D';
-						}else {
-							return 'No checked :(';
-						}
-					}
-				}); 
+		$(document).ready(function() {
+			$('[type="checkbox"]').simpleButtonChecks();
+			
+			// demo
+			$('#year').text(new Date().getFullYear());
+			
+			var $editors = $('.editor');
+			for (var i = 0; i < $editors.length; i++) {
+				var editor = ace.edit($editors[i]);
+				editor.setTheme("ace/theme/xcode");
+				
+				if($($editors[i]).hasClass('html')) editor.session.setMode("ace/mode/html");
+				else editor.session.setMode("ace/mode/javascript");
+				
+				editor.setOptions({
+					showPrintMargin: false,
+					useWorker:false,
+					maxLines: Infinity,
+					showGutter : false,
+					highlightActiveLine : false,
+					cursorStyle : "slim",
+					fontFamily : 'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace'
+				});
 			}
+			$('.sidebar .nav-link').click(function(event) {
+				event.preventDefault();
+				$('.sidebar .nav-link').removeClass('active');
+				$(this).addClass('active');
+				var top = $( $(this).attr('href') ).offset().top;
+				$('html, body').animate({ scrollTop: top - 48 - 15 }, 350)
+			});
 		});
-
-		$('#year').text(new Date().getFullYear());
 	</script>
-
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
-
 </html>
