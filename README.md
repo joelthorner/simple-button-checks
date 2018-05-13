@@ -1,7 +1,7 @@
 
 Simple-button-checks 3
 ==========
-Transform checkbox inputs to Bootstrap HTML buttons
+Transform checkbox inputs to HTML buttons
 
 ## Demos / Documentation
 Demo and doc : [http://joelthorner.github.io/simple-button-checks/](http://joelthorner.github.io/simple-button-checks/)
