@@ -119,3 +119,6 @@ h2, h3, h4 {
 
 table tr > *:first-child {
   width: 270px; }
+
+#t_methods tr > *:first-child {
+  width: 350px; }

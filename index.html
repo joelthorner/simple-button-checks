@@ -30,7 +30,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.1</span></a>
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.2</span></a>
 		
 		<ul class="navbar-nav px-3">
 			<li class="nav-item text-nowrap">
@@ -262,14 +262,21 @@ myInput.simpleButtonChecks('destroy');</div>
 						</thead>
 						<tbody>
 							<tr>
-								<td>myInput.simpleButtonChecks(<span>'destroy'</span>);</td>
+								<td><code>myInput.simpleButtonChecks(<span>'destroy'</span>);</code></td>
 								<td>Destroy simpleButtonChecks instance and detach all events listeners</td>
 							</tr>
 							<tr>
-								<td>myInput.simpleButtonChecks(<span>'addListener'</span>, <span>node</span>);</td>
+								<td><code>myInput.simpleButtonChecks(<span>'addListener'</span>, <span>node</span>);</code></td>
 								<td>
 									Add change checkbox input event to a node. Example:<br>
 									<code>myInput.simpleButtonChecks('addListener', $('#div-1'));</code>
+								</td>
+							</tr>
+							<tr>
+								<td><code>myInput.simpleButtonChecks(<span>'disable'</span>, <span>boolean</span>);</code></td>
+								<td>
+									Enable | disable input. Example:<br>
+									<code>myInput.simpleButtonChecks('disable', true);</code>
 								</td>
 							</tr>
 						</tbody>
@@ -287,6 +294,7 @@ myInput.simpleButtonChecks('destroy');</div>
 			</main>
 		</div>
 	</div>
+
 
 	<script src="demo/js/jquery-3.3.1.min.js"></script>
 	<script src="demo/js/popper.min.js"></script>
