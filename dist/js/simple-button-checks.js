@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.1
+ * Simple button checks 3.0.2
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -84,6 +84,22 @@
 
 			// remove data
 			thisData.$element.removeData('simpleButtonChecks');
+		},
+
+		disable : function (bool) {
+			var thisData = $(this).data('simpleButtonChecks'),
+				 _self = $(this);
+
+ 			if (bool === true) {
+
+ 				thisData.$element.prop('disabled', true);
+ 				thisData.$btn.addClass('sbc-disabled');
+
+ 			}else if(bool === false){
+ 				
+ 				thisData.$element.prop('disabled', false);
+ 				thisData.$btn.removeClass('sbc-disabled');
+ 			}
 		},
 
 		addListener : function (newNode) {
@@ -175,12 +191,17 @@
 		// create btn
 		var thisId = plugin.$element.attr('id');
 		if ($.type(thisId) != 'undefined' && thisId.length) {
-			plugin.uuid = plugin.$element.attr('id') + '_sbc';
+			plugin.uuid = plugin.$element.attr('id') + '-sbc';
 		}else{
 			plugin.uuid = guid();
 		}
 
 		var btnClasses = 'sbc-btn ' + plugin.options.buttonClass + ((isAlreadyChecked) ? ' sbc-checked': ' sbc-no-checked');
+
+		// support disabled
+		if (plugin.$element.prop('disabled')) {
+			btnClasses += ' sbc-disabled'
+		}
 
 		var btnHtml = isAlreadyChecked ? plugin.options.checkedIcon : plugin.options.nonCheckedIcon;
 
