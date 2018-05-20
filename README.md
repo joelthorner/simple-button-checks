@@ -1,7 +1,7 @@
 
 Simple-button-checks 3
 ==========
-Transform checkbox inputs to HTML buttons
+Simple button checks is a simple plugin for transform checkbox inputs into html buttons for css customize. High performance, keyboard support and preserve original input click/change events.
 
 ## Demos / Documentation
 Demo and doc : [http://joelthorner.github.io/simple-button-checks/](http://joelthorner.github.io/simple-button-checks/)
