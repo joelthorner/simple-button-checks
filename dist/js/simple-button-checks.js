@@ -305,7 +305,7 @@
 		 	}
 
 		 	if (plugin.options.strictLabel) {
-		 		plugin.labelToInput = 'label[for="'+plugin.labelToInput+'"]';
+		 		plugin.labelToInput = 'label[for="' + inputId + '"]';
 		 	}else{	
 		 		plugin.labelToInput = 'label';
 		 	}
