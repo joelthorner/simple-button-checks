@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.2
+ * Simple button checks 3.0.3
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -305,7 +305,7 @@
 		 	}
 
 		 	if (plugin.options.strictLabel) {
-		 		plugin.labelToInput = 'label[for="'+plugin.labelToInput+'"]';
+		 		plugin.labelToInput = 'label[for="' + inputId + '"]';
 		 	}else{	
 		 		plugin.labelToInput = 'label';
 		 	}
