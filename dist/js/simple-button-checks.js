@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.2
+ * Simple button checks 3.0.3
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
