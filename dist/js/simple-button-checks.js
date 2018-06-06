@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.5
+ * Simple button checks 3.0.6
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -118,6 +118,8 @@
 	function init() {
 		// init additional listeners
 		plugin.aditionalListeners = [];
+
+		labelRelOption();
 
 		// real init new html system
 		initHTML();
@@ -259,6 +261,18 @@
 			thisData.$btn.focus();
 		});
 
+	}
+
+	function labelRelOption () {
+
+		// save input label reference
+		var inputId = plugin.$element.attr('id');
+
+		if (inputId.length) {
+			plugin.labelToInput = 'label[for="'+inputId+'"]';
+		}else{	
+			plugin.labelToInput = 'label';
+		}
 	}
 
 	// http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
