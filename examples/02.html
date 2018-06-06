@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="../demo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../dist/css/simple-button-checks.css">
+	
+	<style>
+		html, body{
+			height: 100%;
+			overflow: hidden;
+		}
+		body{
+			background-color: #f8f9fa;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+		.checkbox {
+			width: 100%;
+			padding: 15px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+		label{
+			margin-bottom: 0;
+			font-size: .8rem;
+			margin-left: .5rem;
+		}
+	</style>
+
+	<title>Simple Button Checks - 02</title>
+</head>
+<body class="example">
+
+	<div class="checkbox">
+		<input type="checkbox" name="checksExample" id="example1" checked>
+		<label for="example1"> Checked with checked attr <code>&lt;input type="checkbox" checked&gt;</code></label>
+	</div>
+	<div class="checkbox">
+		<input type="checkbox" name="checksExample" id="example2">
+		<label for="example2"> Checked with prop & change <code>$('#example2').prop('checked', true).change();</code></label>
+	</div>
+	<div class="checkbox">
+		<input type="checkbox" name="checksExample" id="example3">
+		<label for="example3"> Checked with click <code>$('#example3').click();</code></label>
+	</div>
+	<div class="checkbox">
+		<input type="checkbox" name="checksExample" id="example4">
+		<label for="example4"> Unchecked</label>
+	</div>
+	<div class="checkbox">
+		<input type="checkbox" name="checksExample" id="example5" disabled>
+		<label for="example5"> Disabled</label>
+	</div>
+
+	<script src="../demo/js/jquery-3.3.1.min.js"></script>
+	<script src="../dist/js/simple-button-checks.js"></script>
+	
+	<!-- example js -->
+	<script>
+		$(document).ready(function() {
+			// init
+			$('input[type="checkbox"]').simpleButtonChecks();
+
+			// check with prop
+			$('#example2').prop('checked', true).change();
+			
+			// check with click
+			$('#example3').click();
+		});
+	</script>
+</body>
+</html>
