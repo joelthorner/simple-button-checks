@@ -30,7 +30,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.3</span></a>
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.4</span></a>
 		
 		<ul class="navbar-nav px-3">
 			<li class="nav-item text-nowrap">
@@ -67,6 +67,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="#demo">
 								Demo
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#changelog">
+								Changelog
 							</a>
 						</li>
 					</ul>
@@ -177,7 +182,7 @@
 							</tr>
 							<tr>
 								<td><code>strictLabel</code></td>
-								<td><code>boolean|null</code></td>
+								<td><code>boolean</code></td>
 								<td><code>true</code></td>
 								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
 							</tr>
@@ -248,9 +253,10 @@
 myInput.simpleButtonChecks('destroy');</div>
 </div>
 				<br>
-				<div class="alert alert-primary" role="alert">
-					<strong>Check / unckeck</strong> For check or uncheck inputs use default <a href="http://api.jquery.com/prop/" target="_blank">jQuery prop method</a> in original input <br>
-					<code style="color: #840085;">$('input[type="checkbox"]').prop('checked', true);</code>
+				<div class="alert alert-warning" role="alert">
+					<h3 class="alert-heading">Check / unckeck</h4>
+					<p>For js check or uncheck input use default <a class="alert-link" href="http://api.jquery.com/prop/" target="_blank">jQuery prop method</a> into original input with change event:<br><kbd>$('#check-one').prop('checked', true).change();</kbd></p>
+					<p>Or use click event into original input:<br><kbd>$('#check-one').click();</kbd></p>
 				</div>
 				<br>
 				<div class="table-responsive">
@@ -285,10 +291,20 @@ myInput.simpleButtonChecks('destroy');</div>
 				</div>
 				<br>
 				<h2 id="demo">Demo</h2>
-				<p>Fully customizable!</p>
-				
+				<p>Customized</p>
 				<iframe class="demo" src="examples/01.html" frameborder="0"></iframe>
-
+				<br>
+				<br>
+				<p>Defaults & js check tests</p>
+				<iframe class="demo" src="examples/02.html" frameborder="0" style="min-height: 270px;"></iframe>
+				<br>
+				<br>
+				<h2 id="changelog">Changelog <span class="badge">3.0.4</span></h2>
+				<ul>
+					<li>strictLabel option only accept boolean value not null</li>
+					<li>Add click &lt;label&gt; events only if has [for] attr</li>
+					<li>Update documentation info and add default plugin demos</li>
+				</ul>
 				<br>
 				<br>
 				<br>
