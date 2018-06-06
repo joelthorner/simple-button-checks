@@ -30,7 +30,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.4</span></a>
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple button checks <span class="badge badge-pill badge-primary">v3.0.5</span></a>
 		
 		<ul class="navbar-nav px-3">
 			<li class="nav-item text-nowrap">
@@ -181,12 +181,6 @@
 								<td>Values: 'none' or 'input' or 'all'. Wrap with a div label and input, only input or nothing.</td>
 							</tr>
 							<tr>
-								<td><code>strictLabel</code></td>
-								<td><code>boolean</code></td>
-								<td><code>true</code></td>
-								<td>Add event listener if label has relation: label 'for' attr -> input 'id' attr. With false value, search sibiling or parent label. If is true and not find relationship set option to false.<br/>With null value not find any label to set events;</td>
-							</tr>
-							<tr>
 								<td><code>btnAttributes</code></td>
 								<td><code>object</code></td>
 								<td><code>{ type : 'button' }</code></td>
@@ -299,10 +293,9 @@ myInput.simpleButtonChecks('destroy');</div>
 				<iframe class="demo" src="examples/02.html" frameborder="0" style="min-height: 270px;"></iframe>
 				<br>
 				<br>
-				<h2 id="changelog">Changelog <span class="badge">3.0.4</span></h2>
+				<h2 id="changelog">Changelog</h2>
 				<ul>
-					<li>strictLabel option only accept boolean value not null</li>
-					<li>Add click &lt;label&gt; events only if has [for] attr</li>
+					<li>Removed strictLabel option, use native browser function</li>
 					<li>Update documentation info and add default plugin demos</li>
 				</ul>
 				<br>
