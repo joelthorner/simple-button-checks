@@ -32,9 +32,6 @@ $('input[type="checkbox"]').simpleButtonChecks({
   nonCheckedIcon : '',
   // 'none' or 'input' or 'all'
   wrapContainer : 'none', 
-  // add click listener if label has rel with label for -> input id
-  // <label for="country"></label> <input id="country" type="checkbox">
-  strictLabel : true,
   btnAttributes : {
     'type' : 'button'
   },
@@ -50,14 +47,3 @@ $('input[type="checkbox"]').simpleButtonChecks();
 
 ## Options and Methods
 Options and Methods : [http://joelthorner.github.io/simple-button-checks/](http://joelthorner.github.io/simple-button-checks/)
-
-## Changelog
-- Removed bootstrap option
-- Removed size option
-- BtnClass option named to buttonClass
-- Renamed namespaces 'sbtc' to 'sbc'
-- Basic CSS It is better to customize it according to the project
-- Check icon to innerHTML svg
-- Renamed plugin
-- New documentation
-- New id for buttons created
