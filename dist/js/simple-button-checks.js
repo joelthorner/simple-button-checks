@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.4
+ * Simple button checks 3.0.5
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -23,10 +23,6 @@
 
 			// 'none' or 'input' or 'all'
 			wrapContainer : 'none', 
-			
-			// add click listener if label has rel with label for -> input id
-			// <label for="country"></label> <input id="country" type="checkbox">
-			strictLabel : true,
 
 			btnAttributes : {
 				'type' : 'button'
@@ -122,9 +118,6 @@
 	function init() {
 		// init additional listeners
 		plugin.aditionalListeners = [];
-		
-		// label strict/nostrict mode
-		labelRelOption();
 
 		// real init new html system
 		initHTML();
@@ -228,12 +221,6 @@
 			$(this).prev('.sbc-init').click();
 		});
 
-		if (plugin.options.strictLabel == true)
-			plugin.labelToInput.click(function(event) {
-				event.preventDefault();
-				$('#' + $(this).attr('for')).focus().click();
-			});
-
 		plugin.$element.on('change.sbc', function(event) {
 
 			var thisData = $(this).data('simpleButtonChecks'),
@@ -272,23 +259,6 @@
 			thisData.$btn.focus();
 		});
 
-	}
-
-	function labelRelOption () {
-		if (plugin.options.strictLabel == true) {
-
-			// save input label reference
-			var inputId = plugin.$element.attr('id');
-
-			// if not find input label reference and option is true -> set strictLabel to false
-			if ($('label[for="'+inputId+'"]').length == 0){
-				plugin.options.strictLabel = false;
-			}
-
-			if (plugin.options.strictLabel) {
-				plugin.labelToInput = $('label[for="' + inputId + '"]');
-			}
-		}
 	}
 
 	// http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
