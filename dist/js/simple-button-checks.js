@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.3
+ * Simple button checks 3.0.4
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -227,31 +227,12 @@
 		plugin.$btn.on('click.sbc', function(event) {
 			$(this).prev('.sbc-init').click();
 		});
-		
-		plugin.$element.parent().find(plugin.labelToInput).on('click.sbc', function(event) {
-			if(plugin.labelToInput == null){
-				event.preventDefault();
-				event.stopPropagation();
-			}else{
-				$(this).find('.sbc-init').click();
-			}
-		});
 
-		plugin.$element.siblings(plugin.labelToInput).on('click.sbc', function(event) {
-			if(plugin.labelToInput == null){
+		if (plugin.options.strictLabel == true)
+			plugin.labelToInput.click(function(event) {
 				event.preventDefault();
-				event.stopPropagation();
-			}else{
-				$(this).siblings('.sbc-init').click();
-			}
-		});
-
-		plugin.$element.parent(plugin.labelToInput).on('click.sbc', function(event) {
-			if(plugin.labelToInput != null){
-				// this call 3 times for click and is an error
-				// $(this).find('.sbc-init').click();
-			}
-		});
+				$('#' + $(this).attr('for')).focus().click();
+			});
 
 		plugin.$element.on('change.sbc', function(event) {
 
@@ -294,25 +275,19 @@
 	}
 
 	function labelRelOption () {
-		if (plugin.options.strictLabel != null) {
+		if (plugin.options.strictLabel == true) {
 
 			// save input label reference
 			var inputId = plugin.$element.attr('id');
 
 			// if not find input label reference and option is true -> set strictLabel to false
-		 	if ($('label[for="'+inputId+'"]').length == 0){
-		 		plugin.options.strictLabel = false;
-		 	}
+			if ($('label[for="'+inputId+'"]').length == 0){
+				plugin.options.strictLabel = false;
+			}
 
-		 	if (plugin.options.strictLabel) {
-		 		plugin.labelToInput = 'label[for="' + inputId + '"]';
-		 	}else{	
-		 		plugin.labelToInput = 'label';
-		 	}
-
-		}
-		else if(plugin.options.strictLabel == null){
-			plugin.labelToInput = null;
+			if (plugin.options.strictLabel) {
+				plugin.labelToInput = $('label[for="' + inputId + '"]');
+			}
 		}
 	}
 
