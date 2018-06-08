@@ -3,8 +3,6 @@ Simple-button-checks 3
 ==========
 Simple button checks is a simple plugin for transform checkbox inputs into html buttons for css customize. High performance, keyboard support and preserve original input click/change events.
 
-Radios plugin: [https://github.com/joelthorner/simple-button-radios](https://github.com/joelthorner/simple-button-radios)
-
 ## Demos / Documentation
 Demo and doc : [http://joelthorner.github.io/simple-button-checks/](http://joelthorner.github.io/simple-button-checks/)
 
@@ -49,3 +47,6 @@ $('input[type="checkbox"]').simpleButtonChecks();
 
 ## Options and Methods
 Options and Methods : [http://joelthorner.github.io/simple-button-checks/](http://joelthorner.github.io/simple-button-checks/)
+
+## Radios plugin
+[https://github.com/joelthorner/simple-button-radios](https://github.com/joelthorner/simple-button-radios)
