@@ -1,5 +1,5 @@
 /*!
- * Simple button checks 3.0.6
+ * Simple button checks 3.0.7
  * http://joelthorner.github.io/simple-button-checks/
  *
  * Copyright 2018 Joel Thorner - @joelthorner
@@ -268,8 +268,8 @@
 		// save input label reference
 		var inputId = plugin.$element.attr('id');
 
-		if (inputId.length) {
-			plugin.labelToInput = 'label[for="'+inputId+'"]';
+		if ($.type(inputId) != 'undefined' && inputId.length) {
+			plugin.labelToInput = 'label[for="' + inputId + '"]';
 		}else{	
 			plugin.labelToInput = 'label';
 		}
