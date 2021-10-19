@@ -14,11 +14,11 @@
   white-space: nowrap;
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
-  border: 0; }
+  border: 0;
+}
 
 .sbc-btn {
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
   text-transform: none;
@@ -34,32 +34,40 @@
   user-select: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   width: 16px;
   height: 16px;
   background-color: #dee2e6;
-  position: relative; }
-  .sbc-btn.sbc-disabled {
-    pointer-events: none;
-    opacity: .75; }
-  .sbc-btn:focus {
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .sbc-btn * {
-    pointer-events: none; }
-  .sbc-btn > * {
-    height: 12px;
-    width: 12px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto; }
-  .sbc-btn > svg {
-    fill: #6c757d; }
+  position: relative;
+}
+
+.sbc-btn.sbc-disabled {
+  pointer-events: none;
+  opacity: .75;
+}
+
+.sbc-btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.sbc-btn * {
+  pointer-events: none;
+}
+
+.sbc-btn>* {
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.sbc-btn>svg {
+  fill: #6c757d;
+}
