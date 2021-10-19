@@ -1,8 +1,8 @@
 /*!
- * Simple button checks 3.0.7
+ * Simple button checks 3.0.8
  * http://joelthorner.github.io/simple-button-checks/
  *
- * Copyright 2018 Joel Thorner - @joelthorner
+ * Copyright 2021 Joel Thorner - @joelthorner
  */
 !function ($) {
 
