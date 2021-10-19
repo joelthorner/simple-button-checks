@@ -18,19 +18,19 @@
 
 		var defaults = {
 			buttonClass: "sbc-default",
-			checkedIcon : '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>',
-			nonCheckedIcon : '',
+			checkedIcon: '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>',
+			nonCheckedIcon: '',
 
 			// 'none' or 'input' or 'all'
-			wrapContainer : 'none', 
+			wrapContainer: 'none',
 
-			btnAttributes : {
-				'type' : 'button'
+			btnAttributes: {
+				'type': 'button'
 			},
 
-			onInit : null,
-			onChange : null,
-			changeCallback : null,
+			onInit: null,
+			onChange: null,
+			changeCallback: null,
 			onDestroy: null
 		};
 
@@ -47,19 +47,19 @@
 
 			// remove HTML
 			thisData.$btn.remove();
-			
+
 			// remove classes
 			thisData.$element.removeClass('sbc-init');
-			
+
 			// remove events
 			thisData.$element.off('change.sbc');
-			
-			if(thisData.labelToInput){
-				
+
+			if (thisData.labelToInput) {
+
 				thisData.$element
 					.siblings(thisData.labelToInput)
 					.off('click.sbc');
-				
+
 				thisData.$element
 					.parent().find(thisData.labelToInput)
 					.off('click.sbc');
@@ -69,12 +69,12 @@
 					.off('click.sbc');
 			}
 
-			$.each(thisData.aditionalListeners, function(index, val) {
-				val.off('click.sbc');				
+			$.each(thisData.aditionalListeners, function (index, val) {
+				val.off('click.sbc');
 			});
-			
+
 			// callback
-			if($.type(plugin.options.onDestroy) === 'function'){
+			if ($.type(plugin.options.onDestroy) === 'function') {
 				plugin.options.onDestroy.call(thisData.$element, thisData);
 			}
 
@@ -82,34 +82,34 @@
 			thisData.$element.removeData('simpleButtonChecks');
 		},
 
-		disable : function (bool) {
+		disable: function (bool) {
 			var thisData = $(this).data('simpleButtonChecks'),
-				 _self = $(this);
+				_self = $(this);
 
- 			if (bool === true) {
+			if (bool === true) {
 
- 				thisData.$element.prop('disabled', true);
- 				thisData.$btn.addClass('sbc-disabled');
+				thisData.$element.prop('disabled', true);
+				thisData.$btn.addClass('sbc-disabled');
 
- 			}else if(bool === false){
- 				
- 				thisData.$element.prop('disabled', false);
- 				thisData.$btn.removeClass('sbc-disabled');
- 			}
+			} else if (bool === false) {
+
+				thisData.$element.prop('disabled', false);
+				thisData.$btn.removeClass('sbc-disabled');
+			}
 		},
 
-		addListener : function (newNode) {
+		addListener: function (newNode) {
 			var thisData = $(this).data('simpleButtonChecks'),
-				 _self = $(this);
+				_self = $(this);
 
- 			if ($.type(newNode) === 'object' && thisData) {
+			if ($.type(newNode) === 'object' && thisData) {
 
- 				thisData.aditionalListeners.push(newNode);
+				thisData.aditionalListeners.push(newNode);
 
- 				newNode.on('click.sbc', function(event) {
+				newNode.on('click.sbc', function (event) {
 					_self.click();
 				});
- 			}
+			}
 		}
 	};
 
@@ -131,37 +131,37 @@
 		initEvents();
 
 		// on init callback
-		if($.type(plugin.options.onInit) === 'function'){
+		if ($.type(plugin.options.onInit) === 'function') {
 			plugin.options.onInit.call(plugin.$element, plugin);
 		}
 	}
 
-	function wrapContainer () {
-		
+	function wrapContainer() {
+
 		if ($.type(plugin.options.wrapContainer) === 'string') {
 			switch (plugin.options.wrapContainer) {
 				case 'none':
 					break;
-				
+
 				case 'input':
 					plugin.$element
 						.add(plugin.$btn)
 						.wrapAll('<div class="sbc-container"></div>')
 					break;
-				
+
 				case 'all':
 					var toWrap;
-					if(plugin.labelToInput){
+					if (plugin.labelToInput) {
 						toWrap = plugin.$element
-								.add(plugin.$btn)
-								.add(plugin.$element.parent(plugin.labelToInput))
-								.add(plugin.$element.siblings(plugin.labelToInput))
-								.add(plugin.$element.parent().find(plugin.labelToInput));
+							.add(plugin.$btn)
+							.add(plugin.$element.parent(plugin.labelToInput))
+							.add(plugin.$element.siblings(plugin.labelToInput))
+							.add(plugin.$element.parent().find(plugin.labelToInput));
 
-					}else{
+					} else {
 						toWrap = plugin.$element.add(plugin.$btn);
 					}
-					
+
 					toWrap.wrapAll('<div class="sbc-container"></div>');
 					break;
 			}
@@ -177,7 +177,7 @@
 		var isAlreadyChecked = false;
 
 		if (plugin.$element.prop('checked')) {
-			isAlreadyChecked = true;            
+			isAlreadyChecked = true;
 		}
 
 		// save checked into el
@@ -187,11 +187,11 @@
 		var thisId = plugin.$element.attr('id');
 		if ($.type(thisId) != 'undefined' && thisId.length) {
 			plugin.uuid = plugin.$element.attr('id') + '-sbc';
-		}else{
+		} else {
 			plugin.uuid = guid();
 		}
 
-		var btnClasses = 'sbc-btn ' + plugin.options.buttonClass + ((isAlreadyChecked) ? ' sbc-checked': ' sbc-no-checked');
+		var btnClasses = 'sbc-btn ' + plugin.options.buttonClass + ((isAlreadyChecked) ? ' sbc-checked' : ' sbc-no-checked');
 
 		// support disabled
 		if (plugin.$element.prop('disabled')) {
@@ -201,13 +201,13 @@
 		var btnHtml = isAlreadyChecked ? plugin.options.checkedIcon : plugin.options.nonCheckedIcon;
 
 		var btn = $('<button/>', {
-			'id' : plugin.uuid,
-			'html' : btnHtml,
-			'class' : btnClasses
+			'id': plugin.uuid,
+			'html': btnHtml,
+			'class': btnClasses
 		});
 
 		// option attributes button html
-		$.each(plugin.options.btnAttributes, function(index, val) {
+		$.each(plugin.options.btnAttributes, function (index, val) {
 			btn.attr(index, val);
 		});
 
@@ -217,28 +217,28 @@
 
 	}
 
-	function initEvents(){
+	function initEvents() {
 
-		plugin.$btn.on('click.sbc', function(event) {
+		plugin.$btn.on('click.sbc', function (event) {
 			$(this).prev('.sbc-init').click();
 		});
 
-		plugin.$element.on('change.sbc', function(event) {
+		plugin.$element.on('change.sbc', function (event) {
 
 			var thisData = $(this).data('simpleButtonChecks'),
-				 self = $(this);
+				self = $(this);
 
-			if($.type(thisData.options.onChange) === 'function'){
+			if ($.type(thisData.options.onChange) === 'function') {
 				thisData.options.onChange.call(self, thisData);
 			}
-			
+
 			if (thisData.isChecked) {
 				thisData.$btn
 					.removeClass('sbc-checked')
 					.addClass('sbc-no-checked')
 					.html(thisData.options.nonCheckedIcon);
 
-			}else{
+			} else {
 				thisData.$btn
 					.removeClass('sbc-no-checked')
 					.addClass('sbc-checked')
@@ -247,41 +247,41 @@
 
 			thisData.isChecked = $(this).prop('checked');
 
-			if($.type(thisData.options.changeCallback) === 'function'){
+			if ($.type(thisData.options.changeCallback) === 'function') {
 				thisData.options.changeCallback.call(self, thisData);
 			}
 
 		});
 
 		// focus tabs
-		plugin.$element.on('focus.sbc', function(event) {
+		plugin.$element.on('focus.sbc', function (event) {
 			var thisData = $(this).data('simpleButtonChecks'),
-				 self = $(this);
+				self = $(this);
 
 			thisData.$btn.focus();
 		});
 
 	}
 
-	function labelRelOption () {
+	function labelRelOption() {
 
 		// save input label reference
 		var inputId = plugin.$element.attr('id');
 
 		if ($.type(inputId) != 'undefined' && inputId.length) {
 			plugin.labelToInput = 'label[for="' + inputId + '"]';
-		}else{	
+		} else {
 			plugin.labelToInput = 'label';
 		}
 	}
 
 	// http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 	function guid() {
-		
+
 		function s4() {
 			return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 		}
-		
+
 		return 'sbc-' + s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4();
 	}
 
@@ -297,7 +297,7 @@
 			var data = $element.data("simpleButtonChecks");
 
 
-			if (!data && $element.is('input[type="checkbox"]')){
+			if (!data && $element.is('input[type="checkbox"]')) {
 				$element.data("simpleButtonChecks", (data = new SimpleButtonChecks(this, options)));
 			}
 
