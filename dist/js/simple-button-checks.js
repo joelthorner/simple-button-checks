@@ -301,7 +301,7 @@
         $element.data("simpleButtonChecks", (data = new SimpleButtonChecks(this, options)));
       }
 
-      if (typeof options == 'string') data[options].apply(this, args);
+      if (data && typeof options == 'string') data[options].apply(this, args);
 
     })
   };
